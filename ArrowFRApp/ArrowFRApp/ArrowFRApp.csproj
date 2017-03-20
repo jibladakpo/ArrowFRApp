@@ -58,10 +58,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adherent.cs">
+    <Compile Include="Controls\Adherent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Adherent.Designer.cs">
+    <Compile Include="Controls\Adherent.Designer.cs">
       <DependentUpon>Adherent.cs</DependentUpon>
     </Compile>
     <Compile Include="FormArrowFR.cs">
@@ -72,13 +72,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TypeAdhesion.cs">
+    <Compile Include="Controls\TypeAdhesion.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TypeAdhesion.Designer.cs">
+    <Compile Include="Controls\TypeAdhesion.Designer.cs">
       <DependentUpon>TypeAdhesion.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Adherent.resx">
+    <EmbeddedResource Include="Controls\Adherent.resx">
       <DependentUpon>Adherent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormArrowFR.resx">
@@ -93,7 +93,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TypeAdhesion.resx">
+    <EmbeddedResource Include="Controls\TypeAdhesion.resx">
       <DependentUpon>TypeAdhesion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -112,6 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
