@@ -35,8 +35,8 @@
             this.buttonSupprimerTypeAdhesion = new System.Windows.Forms.Button();
             this.buttonModifierTypeAdhesion = new System.Windows.Forms.Button();
             this.buttonCreerTypeAdhesion = new System.Windows.Forms.Button();
-            this.dataGridViewArrowfr = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArrowfr)).BeginInit();
+            this.dataGridViewAdhesion = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdhesion)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTarif
@@ -98,14 +98,14 @@
             this.buttonCreerTypeAdhesion.Text = "Créer";
             this.buttonCreerTypeAdhesion.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewArrowfr
+            // dataGridViewAdhesion
             // 
-            this.dataGridViewArrowfr.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewArrowfr.Location = new System.Drawing.Point(293, 51);
-            this.dataGridViewArrowfr.Name = "dataGridViewArrowfr";
-            this.dataGridViewArrowfr.RowTemplate.Height = 24;
-            this.dataGridViewArrowfr.Size = new System.Drawing.Size(369, 454);
-            this.dataGridViewArrowfr.TabIndex = 19;
+            this.dataGridViewAdhesion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAdhesion.Location = new System.Drawing.Point(293, 51);
+            this.dataGridViewAdhesion.Name = "dataGridViewAdhesion";
+            this.dataGridViewAdhesion.RowTemplate.Height = 24;
+            this.dataGridViewAdhesion.Size = new System.Drawing.Size(369, 454);
+            this.dataGridViewAdhesion.TabIndex = 19;
             // 
             // TypeAdhesion
             // 
@@ -119,11 +119,11 @@
             this.Controls.Add(this.buttonSupprimerTypeAdhesion);
             this.Controls.Add(this.buttonModifierTypeAdhesion);
             this.Controls.Add(this.buttonCreerTypeAdhesion);
-            this.Controls.Add(this.dataGridViewArrowfr);
+            this.Controls.Add(this.dataGridViewAdhesion);
             this.Name = "TypeAdhesion";
             this.Size = new System.Drawing.Size(730, 611);
             this.Load += new System.EventHandler(this.TypeAdhesion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArrowfr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdhesion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,6 +138,6 @@
         private System.Windows.Forms.Button buttonSupprimerTypeAdhesion;
         private System.Windows.Forms.Button buttonModifierTypeAdhesion;
         private System.Windows.Forms.Button buttonCreerTypeAdhesion;
-        private System.Windows.Forms.DataGridView dataGridViewArrowfr;
+        private System.Windows.Forms.DataGridView dataGridViewAdhesion;
     }
 }

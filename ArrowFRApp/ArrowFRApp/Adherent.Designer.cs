@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewArrowfr = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAdherent = new System.Windows.Forms.DataGridView();
             this.buttonCreerAdherent = new System.Windows.Forms.Button();
             this.buttonModifierAdherent = new System.Windows.Forms.Button();
             this.buttonSupprimerAdherent = new System.Windows.Forms.Button();
@@ -44,17 +44,17 @@
             this.labelCodePostale = new System.Windows.Forms.Label();
             this.listBoxTypeAdhesion = new System.Windows.Forms.ListBox();
             this.labelTypeAdhesion = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArrowfr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdherent)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewArrowfr
+            // dataGridViewAdherent
             // 
-            this.dataGridViewArrowfr.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewArrowfr.Location = new System.Drawing.Point(293, 51);
-            this.dataGridViewArrowfr.Name = "dataGridViewArrowfr";
-            this.dataGridViewArrowfr.RowTemplate.Height = 24;
-            this.dataGridViewArrowfr.Size = new System.Drawing.Size(369, 454);
-            this.dataGridViewArrowfr.TabIndex = 0;
+            this.dataGridViewAdherent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAdherent.Location = new System.Drawing.Point(293, 51);
+            this.dataGridViewAdherent.Name = "dataGridViewAdherent";
+            this.dataGridViewAdherent.RowTemplate.Height = 24;
+            this.dataGridViewAdherent.Size = new System.Drawing.Size(369, 454);
+            this.dataGridViewAdherent.TabIndex = 0;
             // 
             // buttonCreerAdherent
             // 
@@ -202,11 +202,11 @@
             this.Controls.Add(this.buttonSupprimerAdherent);
             this.Controls.Add(this.buttonModifierAdherent);
             this.Controls.Add(this.buttonCreerAdherent);
-            this.Controls.Add(this.dataGridViewArrowfr);
+            this.Controls.Add(this.dataGridViewAdherent);
             this.Name = "Adherent";
             this.Size = new System.Drawing.Size(730, 611);
             this.Load += new System.EventHandler(this.Adherent_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArrowfr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdherent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,7 +214,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewArrowfr;
+        private System.Windows.Forms.DataGridView dataGridViewAdherent;
         private System.Windows.Forms.Button buttonCreerAdherent;
         private System.Windows.Forms.Button buttonModifierAdherent;
         private System.Windows.Forms.Button buttonSupprimerAdherent;
