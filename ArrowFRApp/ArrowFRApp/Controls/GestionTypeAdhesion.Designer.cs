@@ -35,8 +35,9 @@
             this.buttonSupprimerTypeAdhesion = new System.Windows.Forms.Button();
             this.buttonModifierTypeAdhesion = new System.Windows.Forms.Button();
             this.buttonCreerTypeAdhesion = new System.Windows.Forms.Button();
-            this.dataGridViewAdhesion = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdhesion)).BeginInit();
+            this.listViewTypeAdhesion = new System.Windows.Forms.ListView();
+            this.columnLibelle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnTarif = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // labelTarif
@@ -98,20 +99,32 @@
             this.buttonCreerTypeAdhesion.Text = "Créer";
             this.buttonCreerTypeAdhesion.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewAdhesion
+            // listViewTypeAdhesion
             // 
-            this.dataGridViewAdhesion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAdhesion.Location = new System.Drawing.Point(293, 51);
-            this.dataGridViewAdhesion.Name = "dataGridViewAdhesion";
-            this.dataGridViewAdhesion.RowTemplate.Height = 24;
-            this.dataGridViewAdhesion.Size = new System.Drawing.Size(369, 454);
-            this.dataGridViewAdhesion.TabIndex = 19;
+            this.listViewTypeAdhesion.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnLibelle,
+            this.columnTarif});
+            this.listViewTypeAdhesion.Location = new System.Drawing.Point(293, 97);
+            this.listViewTypeAdhesion.Name = "listViewTypeAdhesion";
+            this.listViewTypeAdhesion.Size = new System.Drawing.Size(369, 408);
+            this.listViewTypeAdhesion.TabIndex = 30;
+            this.listViewTypeAdhesion.UseCompatibleStateImageBehavior = false;
+            this.listViewTypeAdhesion.View = System.Windows.Forms.View.Details;
             // 
-            // TypeAdhesion
+            // columnLibelle
+            // 
+            this.columnLibelle.Text = "Libelle";
+            // 
+            // columnTarif
+            // 
+            this.columnTarif.Text = "Tarif";
+            // 
+            // GestionTypeAdhesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.listViewTypeAdhesion);
             this.Controls.Add(this.labelTarif);
             this.Controls.Add(this.labelLibellé);
             this.Controls.Add(this.textBoxTarif);
@@ -119,11 +132,9 @@
             this.Controls.Add(this.buttonSupprimerTypeAdhesion);
             this.Controls.Add(this.buttonModifierTypeAdhesion);
             this.Controls.Add(this.buttonCreerTypeAdhesion);
-            this.Controls.Add(this.dataGridViewAdhesion);
-            this.Name = "TypeAdhesion";
+            this.Name = "GestionTypeAdhesion";
             this.Size = new System.Drawing.Size(730, 611);
             this.Load += new System.EventHandler(this.TypeAdhesion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdhesion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,6 +149,8 @@
         private System.Windows.Forms.Button buttonSupprimerTypeAdhesion;
         private System.Windows.Forms.Button buttonModifierTypeAdhesion;
         private System.Windows.Forms.Button buttonCreerTypeAdhesion;
-        private System.Windows.Forms.DataGridView dataGridViewAdhesion;
+        private System.Windows.Forms.ListView listViewTypeAdhesion;
+        private System.Windows.Forms.ColumnHeader columnLibelle;
+        private System.Windows.Forms.ColumnHeader columnTarif;
     }
 }
