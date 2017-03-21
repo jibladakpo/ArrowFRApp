@@ -136,5 +136,13 @@ namespace ArrowFRApp
             }
         }
         //public void Delete(int id)
+        /// <summary>
+        /// TODO.  Supprimer type adhesion
+        /// </summary>
+        /// <param name="id"></param>
+        public static void Delete(int id)
+        {
+
+        }
     }
 }
