@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ArrowFRApp.Controls;
+using System;
 using System.Windows.Forms;
 
 namespace ArrowFRApp
@@ -25,6 +19,15 @@ namespace ArrowFRApp
         private void button1_Click(object sender, EventArgs e)
         {
             panelAccueil.Visible = true;
+             if (!panelAccueil.Controls.Contains(GestionAccueil.Instance))
+            {
+                panelAccueil.Controls.Add(GestionAccueil.Instance);
+                GestionAccueil.Instance.Dock = DockStyle.Fill;
+                GestionAccueil.Instance.BringToFront();
+            }
+            else
+                GestionAccueil.Instance.BringToFront();
+        
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -42,38 +45,6 @@ namespace ArrowFRApp
 
         }
 
-        private void buttonGestionAdherent_Click(object sender, EventArgs e)
-        {
-            if (!panelAccueil.Controls.Contains(GestionAdherent.Instance))
-            {
-               panelAccueil.Controls.Add(GestionAdherent.Instance);
-                GestionAdherent.Instance.Dock = DockStyle.Fill;
-                GestionAdherent.Instance.BringToFront();
-            }
-            else
-                GestionAdherent.Instance.BringToFront();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (!panelAccueil.Controls.Contains(GestionTypeAdhesion.Instance))
-            {
-                panelAccueil.Controls.Add(GestionTypeAdhesion.Instance);
-                GestionTypeAdhesion.Instance.Dock = DockStyle.Fill;
-                GestionTypeAdhesion.Instance.BringToFront();
-            }
-            else
-                GestionTypeAdhesion.Instance.BringToFront();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
