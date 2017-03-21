@@ -10,31 +10,26 @@ using System.Windows.Forms;
 
 namespace ArrowFRApp
 {
-    public partial class Adherent : UserControl
+    public partial class GestionTypeAdhesion : UserControl
     {
-        private static Adherent _instance;
+        private static GestionTypeAdhesion _instance;
 
-        public static Adherent Instance
+        public static GestionTypeAdhesion Instance
         {
-        get
+            get
             {
                 if (_instance == null)
-                    _instance = new Adherent();
+                    _instance = new GestionTypeAdhesion();
                 return _instance;
-           
+
             }
         }
-        public Adherent()
+        public GestionTypeAdhesion()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Adherent_Load(object sender, EventArgs e)
+        private void TypeAdhesion_Load(object sender, EventArgs e)
         {
 
         }

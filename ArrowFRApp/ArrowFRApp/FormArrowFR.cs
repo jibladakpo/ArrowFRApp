@@ -44,26 +44,26 @@ namespace ArrowFRApp
 
         private void buttonGestionAdherent_Click(object sender, EventArgs e)
         {
-            if (!panelAccueil.Controls.Contains(Adherent.Instance))
+            if (!panelAccueil.Controls.Contains(GestionAdherent.Instance))
             {
-               panelAccueil.Controls.Add(Adherent.Instance);
-                Adherent.Instance.Dock = DockStyle.Fill;
-                Adherent.Instance.BringToFront();
+               panelAccueil.Controls.Add(GestionAdherent.Instance);
+                GestionAdherent.Instance.Dock = DockStyle.Fill;
+                GestionAdherent.Instance.BringToFront();
             }
             else
-                Adherent.Instance.BringToFront();
+                GestionAdherent.Instance.BringToFront();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (!panelAccueil.Controls.Contains(TypeAdhesion.Instance))
+            if (!panelAccueil.Controls.Contains(GestionTypeAdhesion.Instance))
             {
-                panelAccueil.Controls.Add(TypeAdhesion.Instance);
-                TypeAdhesion.Instance.Dock = DockStyle.Fill;
-                TypeAdhesion.Instance.BringToFront();
+                panelAccueil.Controls.Add(GestionTypeAdhesion.Instance);
+                GestionTypeAdhesion.Instance.Dock = DockStyle.Fill;
+                GestionTypeAdhesion.Instance.BringToFront();
             }
             else
-                TypeAdhesion.Instance.BringToFront();
+                GestionTypeAdhesion.Instance.BringToFront();
         }
 
         private void button3_Click(object sender, EventArgs e)

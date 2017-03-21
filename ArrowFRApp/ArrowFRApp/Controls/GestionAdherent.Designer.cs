@@ -1,6 +1,6 @@
 ﻿namespace ArrowFRApp
 {
-    partial class Adherent
+    partial class GestionAdherent
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewAdherent = new System.Windows.Forms.DataGridView();
             this.buttonCreerAdherent = new System.Windows.Forms.Button();
             this.buttonModifierAdherent = new System.Windows.Forms.Button();
             this.buttonSupprimerAdherent = new System.Windows.Forms.Button();
@@ -44,17 +43,14 @@
             this.labelCodePostale = new System.Windows.Forms.Label();
             this.listBoxTypeAdhesion = new System.Windows.Forms.ListBox();
             this.labelTypeAdhesion = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdherent)).BeginInit();
+            this.listViewAdherent = new System.Windows.Forms.ListView();
+            this.columnNom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnPrenom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnDateNaissance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnVille = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnCodePostal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnTypeAdhesion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // dataGridViewAdherent
-            // 
-            this.dataGridViewAdherent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAdherent.Location = new System.Drawing.Point(293, 51);
-            this.dataGridViewAdherent.Name = "dataGridViewAdherent";
-            this.dataGridViewAdherent.RowTemplate.Height = 24;
-            this.dataGridViewAdherent.Size = new System.Drawing.Size(369, 454);
-            this.dataGridViewAdherent.TabIndex = 0;
             // 
             // buttonCreerAdherent
             // 
@@ -182,11 +178,52 @@
             this.labelTypeAdhesion.TabIndex = 18;
             this.labelTypeAdhesion.Text = "Type d\'adhésion";
             // 
-            // Adherent
+            // listViewAdherent
+            // 
+            this.listViewAdherent.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnNom,
+            this.columnPrenom,
+            this.columnDateNaissance,
+            this.columnVille,
+            this.columnCodePostal,
+            this.columnTypeAdhesion});
+            this.listViewAdherent.Location = new System.Drawing.Point(293, 77);
+            this.listViewAdherent.Name = "listViewAdherent";
+            this.listViewAdherent.Size = new System.Drawing.Size(596, 418);
+            this.listViewAdherent.TabIndex = 19;
+            this.listViewAdherent.UseCompatibleStateImageBehavior = false;
+            this.listViewAdherent.View = System.Windows.Forms.View.Details;
+            // 
+            // columnNom
+            // 
+            this.columnNom.Text = "Nom";
+            // 
+            // columnPrenom
+            // 
+            this.columnPrenom.Text = "Prénom";
+            // 
+            // columnDateNaissance
+            // 
+            this.columnDateNaissance.Text = "DateNaissance";
+            // 
+            // columnVille
+            // 
+            this.columnVille.Text = "Ville";
+            // 
+            // columnCodePostal
+            // 
+            this.columnCodePostal.Text = "Code Postal";
+            // 
+            // columnTypeAdhesion
+            // 
+            this.columnTypeAdhesion.Text = "TypeAdhesion";
+            // 
+            // GestionAdherent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.listViewAdherent);
             this.Controls.Add(this.labelTypeAdhesion);
             this.Controls.Add(this.listBoxTypeAdhesion);
             this.Controls.Add(this.labelCodePostale);
@@ -202,11 +239,9 @@
             this.Controls.Add(this.buttonSupprimerAdherent);
             this.Controls.Add(this.buttonModifierAdherent);
             this.Controls.Add(this.buttonCreerAdherent);
-            this.Controls.Add(this.dataGridViewAdherent);
-            this.Name = "Adherent";
-            this.Size = new System.Drawing.Size(730, 611);
+            this.Name = "GestionAdherent";
+            this.Size = new System.Drawing.Size(991, 610);
             this.Load += new System.EventHandler(this.Adherent_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdherent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,7 +249,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewAdherent;
         private System.Windows.Forms.Button buttonCreerAdherent;
         private System.Windows.Forms.Button buttonModifierAdherent;
         private System.Windows.Forms.Button buttonSupprimerAdherent;
@@ -230,5 +264,12 @@
         private System.Windows.Forms.Label labelCodePostale;
         private System.Windows.Forms.ListBox listBoxTypeAdhesion;
         private System.Windows.Forms.Label labelTypeAdhesion;
+        private System.Windows.Forms.ListView listViewAdherent;
+        private System.Windows.Forms.ColumnHeader columnNom;
+        private System.Windows.Forms.ColumnHeader columnPrenom;
+        private System.Windows.Forms.ColumnHeader columnDateNaissance;
+        private System.Windows.Forms.ColumnHeader columnVille;
+        private System.Windows.Forms.ColumnHeader columnCodePostal;
+        private System.Windows.Forms.ColumnHeader columnTypeAdhesion;
     }
 }

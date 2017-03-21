@@ -1,6 +1,6 @@
 ﻿namespace ArrowFRApp
 {
-    partial class TypeAdhesion
+    partial class GestionTypeAdhesion
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.

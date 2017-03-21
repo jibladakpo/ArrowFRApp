@@ -58,12 +58,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Adherent.cs">
+    <Compile Include="Classes\Adherent.cs" />
+    <Compile Include="Classes\TypeAdhesion.cs" />
+    <Compile Include="Controls\Accueil.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Adherent.Designer.cs">
-      <DependentUpon>Adherent.cs</DependentUpon>
+    <Compile Include="Controls\Accueil.Designer.cs">
+      <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\GestionAdherent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GestionAdherent.Designer.cs">
+      <DependentUpon>GestionAdherent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\AdherentDB.cs" />
+    <Compile Include="DataAccessLayer\Initialisation.cs" />
+    <Compile Include="DataAccessLayer\TypeAdhesionDB.cs" />
     <Compile Include="FormArrowFR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,14 +83,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controls\TypeAdhesion.cs">
+    <Compile Include="Controls\GestionTypeAdhesion.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\TypeAdhesion.Designer.cs">
-      <DependentUpon>TypeAdhesion.cs</DependentUpon>
+    <Compile Include="Controls\GestionTypeAdhesion.Designer.cs">
+      <DependentUpon>GestionTypeAdhesion.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\Adherent.resx">
-      <DependentUpon>Adherent.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Accueil.resx">
+      <DependentUpon>Accueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GestionAdherent.resx">
+      <DependentUpon>GestionAdherent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormArrowFR.resx">
       <DependentUpon>FormArrowFR.cs</DependentUpon>
@@ -93,8 +107,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\TypeAdhesion.resx">
-      <DependentUpon>TypeAdhesion.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\GestionTypeAdhesion.resx">
+      <DependentUpon>GestionTypeAdhesion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -113,9 +127,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
