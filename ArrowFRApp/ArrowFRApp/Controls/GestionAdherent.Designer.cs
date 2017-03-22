@@ -34,14 +34,12 @@
             this.textBoxNom = new System.Windows.Forms.TextBox();
             this.textBoxCodePostale = new System.Windows.Forms.TextBox();
             this.textBoxVille = new System.Windows.Forms.TextBox();
-            this.textBoxDateNaissance = new System.Windows.Forms.TextBox();
             this.textBoxPrenom = new System.Windows.Forms.TextBox();
             this.labelNom = new System.Windows.Forms.Label();
             this.labelPrenom = new System.Windows.Forms.Label();
             this.labelDateNaissance = new System.Windows.Forms.Label();
             this.labelVille = new System.Windows.Forms.Label();
             this.labelCodePostale = new System.Windows.Forms.Label();
-            this.listBoxTypeAdhesion = new System.Windows.Forms.ListBox();
             this.labelTypeAdhesion = new System.Windows.Forms.Label();
             this.listViewAdherent = new System.Windows.Forms.ListView();
             this.columnNom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -50,6 +48,8 @@
             this.columnVille = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnCodePostal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnTypeAdhesion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.checkedListBoxAdhesion = new System.Windows.Forms.CheckedListBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // buttonCreerAdherent
@@ -60,6 +60,7 @@
             this.buttonCreerAdherent.TabIndex = 2;
             this.buttonCreerAdherent.Text = "Créer";
             this.buttonCreerAdherent.UseVisualStyleBackColor = true;
+            this.buttonCreerAdherent.Click += new System.EventHandler(this.buttonCreerAdherent_Click);
             // 
             // buttonModifierAdherent
             // 
@@ -99,13 +100,6 @@
             this.textBoxVille.Name = "textBoxVille";
             this.textBoxVille.Size = new System.Drawing.Size(206, 22);
             this.textBoxVille.TabIndex = 9;
-            // 
-            // textBoxDateNaissance
-            // 
-            this.textBoxDateNaissance.Location = new System.Drawing.Point(33, 199);
-            this.textBoxDateNaissance.Name = "textBoxDateNaissance";
-            this.textBoxDateNaissance.Size = new System.Drawing.Size(206, 22);
-            this.textBoxDateNaissance.TabIndex = 10;
             // 
             // textBoxPrenom
             // 
@@ -160,15 +154,6 @@
             this.labelCodePostale.TabIndex = 16;
             this.labelCodePostale.Text = "Code Postale";
             // 
-            // listBoxTypeAdhesion
-            // 
-            this.listBoxTypeAdhesion.FormattingEnabled = true;
-            this.listBoxTypeAdhesion.ItemHeight = 16;
-            this.listBoxTypeAdhesion.Location = new System.Drawing.Point(33, 352);
-            this.listBoxTypeAdhesion.Name = "listBoxTypeAdhesion";
-            this.listBoxTypeAdhesion.Size = new System.Drawing.Size(206, 68);
-            this.listBoxTypeAdhesion.TabIndex = 17;
-            // 
             // labelTypeAdhesion
             // 
             this.labelTypeAdhesion.AutoSize = true;
@@ -187,6 +172,8 @@
             this.columnVille,
             this.columnCodePostal,
             this.columnTypeAdhesion});
+            this.listViewAdherent.FullRowSelect = true;
+            this.listViewAdherent.GridLines = true;
             this.listViewAdherent.Location = new System.Drawing.Point(293, 77);
             this.listViewAdherent.Name = "listViewAdherent";
             this.listViewAdherent.Size = new System.Drawing.Size(596, 418);
@@ -218,21 +205,36 @@
             // 
             this.columnTypeAdhesion.Text = "TypeAdhesion";
             // 
+            // checkedListBoxAdhesion
+            // 
+            this.checkedListBoxAdhesion.FormattingEnabled = true;
+            this.checkedListBoxAdhesion.Location = new System.Drawing.Point(36, 361);
+            this.checkedListBoxAdhesion.Name = "checkedListBoxAdhesion";
+            this.checkedListBoxAdhesion.Size = new System.Drawing.Size(203, 106);
+            this.checkedListBoxAdhesion.TabIndex = 20;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(33, 199);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 21;
+            // 
             // GestionAdherent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.checkedListBoxAdhesion);
             this.Controls.Add(this.listViewAdherent);
             this.Controls.Add(this.labelTypeAdhesion);
-            this.Controls.Add(this.listBoxTypeAdhesion);
             this.Controls.Add(this.labelCodePostale);
             this.Controls.Add(this.labelVille);
             this.Controls.Add(this.labelDateNaissance);
             this.Controls.Add(this.labelPrenom);
             this.Controls.Add(this.labelNom);
             this.Controls.Add(this.textBoxPrenom);
-            this.Controls.Add(this.textBoxDateNaissance);
             this.Controls.Add(this.textBoxVille);
             this.Controls.Add(this.textBoxCodePostale);
             this.Controls.Add(this.textBoxNom);
@@ -255,14 +257,12 @@
         private System.Windows.Forms.TextBox textBoxNom;
         private System.Windows.Forms.TextBox textBoxCodePostale;
         private System.Windows.Forms.TextBox textBoxVille;
-        private System.Windows.Forms.TextBox textBoxDateNaissance;
         private System.Windows.Forms.TextBox textBoxPrenom;
         private System.Windows.Forms.Label labelNom;
         private System.Windows.Forms.Label labelPrenom;
         private System.Windows.Forms.Label labelDateNaissance;
         private System.Windows.Forms.Label labelVille;
         private System.Windows.Forms.Label labelCodePostale;
-        private System.Windows.Forms.ListBox listBoxTypeAdhesion;
         private System.Windows.Forms.Label labelTypeAdhesion;
         private System.Windows.Forms.ListView listViewAdherent;
         private System.Windows.Forms.ColumnHeader columnNom;
@@ -271,5 +271,7 @@
         private System.Windows.Forms.ColumnHeader columnVille;
         private System.Windows.Forms.ColumnHeader columnCodePostal;
         private System.Windows.Forms.ColumnHeader columnTypeAdhesion;
+        private System.Windows.Forms.CheckedListBox checkedListBoxAdhesion;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

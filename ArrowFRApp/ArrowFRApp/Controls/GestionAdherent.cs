@@ -36,7 +36,7 @@ namespace ArrowFRApp
 
         private void Adherent_Load(object sender, EventArgs e)
         {
-            //Récupération de tous les adhérents et affichage dans une listView qui a pour nom listViewAdherents
+            //Récupération de tous les adhérents et affichage dans une listView qui a pour nom listViewAdherent
             AdherentDB adhDB = new AdherentDB();
             List<ArrowFRApp.Adherent> lesAdherents = adhDB.GetAllAdherent();
             foreach (var item in lesAdherents)
@@ -51,6 +51,29 @@ namespace ArrowFRApp
 
                 listViewAdherent.Items.Add(listItem);
             }
+            //Récupération de tous les types adhésions et affichage dans une listbox qui pour nom listBoxTypeAdhesion
+            TypeAdhesionDB adhesionDB = new TypeAdhesionDB();
+            List<ArrowFRApp.TypeAdhesion> lesTypesAdhesions = adhesionDB.GetAllTypeAdhesion();
+            foreach (var item in lesTypesAdhesions)
+            {
+                CheckedListBox listBoxItem = new CheckedListBox();
+
+                checkedListBoxAdhesion.Items.Add(item.Libelle);
+                
+            }
         }
+
+        private void buttonCreerAdherent_Click(object sender, EventArgs e)
+        {
+            AdherentDB adhDB = new AdherentDB();
+            TypeAdhesionDB typeDB = new TypeAdhesionDB();
+            TypeAdhesion t = typeDB.GetTypeAdhesion(checkedListBoxAdhesion.SelectedIndex);
+            Adherent a = new Adherent(textBoxNom.Text, textBoxPrenom.Text, dateTimePicker1.Value, textBoxVille.Text, textBoxCodePostale.Text, t);
+            adhDB.Save(a);
+            listViewAdherent.Refresh();
+            MessageBox.Show("Adherent ajouté: "+ textBoxNom.Text +" "+textBoxPrenom.Text);
+        }
+
+       
     }
 }
