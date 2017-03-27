@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionAccueil));
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelGestion = new System.Windows.Forms.Panel();
             this.buttonGestionAdherent = new System.Windows.Forms.Button();
             this.buttonGestionTypeAdhesion = new System.Windows.Forms.Button();
             this.buttonRecapitulatif = new System.Windows.Forms.Button();
+            this.pictureBoxArrowFr = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowFr)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -55,9 +60,9 @@
             // 
             // buttonGestionAdherent
             // 
-            this.buttonGestionAdherent.Location = new System.Drawing.Point(56, 261);
+            this.buttonGestionAdherent.Location = new System.Drawing.Point(33, 261);
             this.buttonGestionAdherent.Name = "buttonGestionAdherent";
-            this.buttonGestionAdherent.Size = new System.Drawing.Size(139, 59);
+            this.buttonGestionAdherent.Size = new System.Drawing.Size(188, 79);
             this.buttonGestionAdherent.TabIndex = 2;
             this.buttonGestionAdherent.Text = "Gestion Adherent";
             this.buttonGestionAdherent.UseVisualStyleBackColor = true;
@@ -65,9 +70,9 @@
             // 
             // buttonGestionTypeAdhesion
             // 
-            this.buttonGestionTypeAdhesion.Location = new System.Drawing.Point(56, 360);
+            this.buttonGestionTypeAdhesion.Location = new System.Drawing.Point(33, 356);
             this.buttonGestionTypeAdhesion.Name = "buttonGestionTypeAdhesion";
-            this.buttonGestionTypeAdhesion.Size = new System.Drawing.Size(139, 59);
+            this.buttonGestionTypeAdhesion.Size = new System.Drawing.Size(188, 79);
             this.buttonGestionTypeAdhesion.TabIndex = 3;
             this.buttonGestionTypeAdhesion.Text = "Gestion Type Adhesion";
             this.buttonGestionTypeAdhesion.UseVisualStyleBackColor = true;
@@ -75,17 +80,53 @@
             // 
             // buttonRecapitulatif
             // 
-            this.buttonRecapitulatif.Location = new System.Drawing.Point(56, 455);
+            this.buttonRecapitulatif.Location = new System.Drawing.Point(33, 450);
             this.buttonRecapitulatif.Name = "buttonRecapitulatif";
-            this.buttonRecapitulatif.Size = new System.Drawing.Size(139, 59);
+            this.buttonRecapitulatif.Size = new System.Drawing.Size(188, 82);
             this.buttonRecapitulatif.TabIndex = 4;
             this.buttonRecapitulatif.Text = "Récapitulatif";
             this.buttonRecapitulatif.UseVisualStyleBackColor = true;
+            this.buttonRecapitulatif.Click += new System.EventHandler(this.buttonRecapitulatif_Click);
+            // 
+            // pictureBoxArrowFr
+            // 
+            this.pictureBoxArrowFr.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxArrowFr.Image")));
+            this.pictureBoxArrowFr.Location = new System.Drawing.Point(56, 64);
+            this.pictureBoxArrowFr.Name = "pictureBoxArrowFr";
+            this.pictureBoxArrowFr.Size = new System.Drawing.Size(147, 136);
+            this.pictureBoxArrowFr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxArrowFr.TabIndex = 5;
+            this.pictureBoxArrowFr.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(51, 217);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 29);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Menu";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(57, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(134, 38);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "ArrowFr";
             // 
             // GestionAccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBoxArrowFr);
             this.Controls.Add(this.buttonRecapitulatif);
             this.Controls.Add(this.buttonGestionTypeAdhesion);
             this.Controls.Add(this.buttonGestionAdherent);
@@ -94,7 +135,9 @@
             this.Name = "GestionAccueil";
             this.Size = new System.Drawing.Size(921, 559);
             this.Load += new System.EventHandler(this.GestionAccueil_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowFr)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -105,6 +148,9 @@
         private System.Windows.Forms.Button buttonGestionAdherent;
         private System.Windows.Forms.Button buttonGestionTypeAdhesion;
         private System.Windows.Forms.Button buttonRecapitulatif;
+        private System.Windows.Forms.PictureBox pictureBoxArrowFr;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
 
     }
 }

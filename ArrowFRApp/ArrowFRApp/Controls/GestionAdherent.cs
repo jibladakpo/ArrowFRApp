@@ -58,7 +58,7 @@ namespace ArrowFRApp
             {
                 CheckedListBox listBoxItem = new CheckedListBox();
 
-                checkedListBoxAdhesion.Items.Add(item.Libelle);
+                listBoxTypeAdhesion.Items.Add(item.idTypeAdhesion + item.Libelle);
                 
             }
         }
@@ -67,12 +67,69 @@ namespace ArrowFRApp
         {
             AdherentDB adhDB = new AdherentDB();
             TypeAdhesionDB typeDB = new TypeAdhesionDB();
-            TypeAdhesion t = typeDB.GetTypeAdhesion(checkedListBoxAdhesion.SelectedIndex);
+            var index = listBoxTypeAdhesion.SelectedIndex;
+            TypeAdhesion t = typeDB.GetTypeAdhesion(index);
             Adherent a = new Adherent(textBoxNom.Text, textBoxPrenom.Text, dateTimePicker1.Value, textBoxVille.Text, textBoxCodePostale.Text, t);
             adhDB.Save(a);
             listViewAdherent.Refresh();
             MessageBox.Show("Adherent ajouté: "+ textBoxNom.Text +" "+textBoxPrenom.Text);
         }
+
+        private void buttonModifierAdherent_Click(object sender, EventArgs e)
+        {
+            AdherentDB adhDB = new AdherentDB();
+            TypeAdhesionDB typeDB = new TypeAdhesionDB();
+            var index = listBoxTypeAdhesion.SelectedIndex;
+            TypeAdhesion t = typeDB.GetTypeAdhesion(index);
+            Adherent a = new Adherent(textBoxNom.Text, textBoxPrenom.Text, dateTimePicker1.Value, textBoxVille.Text, textBoxCodePostale.Text, t);
+            adhDB.Save(a);
+            listViewAdherent.Refresh();
+            MessageBox.Show("Infos modifiées sur: " + textBoxNom.Text + " " + textBoxPrenom.Text);
+        }
+
+        private void buttonSupprimerAdherent_Click(object sender, EventArgs e)
+        {
+            AdherentDB adhDB = new AdherentDB();
+            
+            if (listViewAdherent.FullRowSelect == true)
+            {
+               // adhDB.Delete();
+            }
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            textBoxNom.Clear();
+            textBoxPrenom.Clear();
+            dateTimePicker1.Value = DateTime.Now;
+            textBoxVille.Clear();
+            textBoxCodePostale.Clear();
+            
+
+           
+        } 
+
+        private void textBoxNom_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listViewAdherent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewAdherent.SelectedItems.Count > 0)
+            {
+                textBoxNom.Text = listViewAdherent.SelectedItems[0].Text;
+                textBoxPrenom.Text = listViewAdherent.SelectedItems[0].SubItems[1].Text;
+                dateTimePicker1.Text = listViewAdherent.SelectedItems[0].SubItems[2].Text;
+                textBoxVille.Text = listViewAdherent.SelectedItems[0].SubItems[3].Text;
+                textBoxCodePostale.Text = listViewAdherent.SelectedItems[0].SubItems[4].Text;
+                listBoxTypeAdhesion.Text = listViewAdherent.SelectedItems[0].SubItems[5].Text;
+
+            }
+          
+        }
+
+        
 
        
     }

@@ -46,5 +46,25 @@ namespace ArrowFRApp
                 listViewTypeAdhesion.Items.Add(listItem);
             }
         }
+
+        private void buttonCreerTypeAdhesion_Click(object sender, EventArgs e)
+        {
+            TypeAdhesionDB typeadhDB = new TypeAdhesionDB();
+            TypeAdhesionDB typeDB = new TypeAdhesionDB();
+            TypeAdhesion ta = new TypeAdhesion(0,textBoxLibelle.Text, Convert.ToInt32(textBoxTarif.Text));
+            typeadhDB.Save(ta);
+            listViewTypeAdhesion.Refresh();
+            MessageBox.Show("Type Adhesion ajouté: " + textBoxLibelle.Text);
+        }
+
+        private void buttonModifierTypeAdhesion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSupprimerTypeAdhesion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

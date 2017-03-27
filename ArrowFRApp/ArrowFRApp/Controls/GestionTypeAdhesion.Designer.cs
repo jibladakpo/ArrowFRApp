@@ -38,6 +38,7 @@
             this.listViewTypeAdhesion = new System.Windows.Forms.ListView();
             this.columnLibelle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnTarif = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelTarif
@@ -80,6 +81,7 @@
             this.buttonSupprimerTypeAdhesion.TabIndex = 22;
             this.buttonSupprimerTypeAdhesion.Text = "Supprimer";
             this.buttonSupprimerTypeAdhesion.UseVisualStyleBackColor = true;
+            this.buttonSupprimerTypeAdhesion.Click += new System.EventHandler(this.buttonSupprimerTypeAdhesion_Click);
             // 
             // buttonModifierTypeAdhesion
             // 
@@ -89,6 +91,7 @@
             this.buttonModifierTypeAdhesion.TabIndex = 21;
             this.buttonModifierTypeAdhesion.Text = "Modifier";
             this.buttonModifierTypeAdhesion.UseVisualStyleBackColor = true;
+            this.buttonModifierTypeAdhesion.Click += new System.EventHandler(this.buttonModifierTypeAdhesion_Click);
             // 
             // buttonCreerTypeAdhesion
             // 
@@ -98,6 +101,7 @@
             this.buttonCreerTypeAdhesion.TabIndex = 20;
             this.buttonCreerTypeAdhesion.Text = "Créer";
             this.buttonCreerTypeAdhesion.UseVisualStyleBackColor = true;
+            this.buttonCreerTypeAdhesion.Click += new System.EventHandler(this.buttonCreerTypeAdhesion_Click);
             // 
             // listViewTypeAdhesion
             // 
@@ -119,11 +123,22 @@
             // 
             this.columnTarif.Text = "Tarif";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(26, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(391, 38);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Gestion Types Adhésions";
+            // 
             // GestionTypeAdhesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.listViewTypeAdhesion);
             this.Controls.Add(this.labelTarif);
             this.Controls.Add(this.labelLibellé);
@@ -152,5 +167,6 @@
         private System.Windows.Forms.ListView listViewTypeAdhesion;
         private System.Windows.Forms.ColumnHeader columnLibelle;
         private System.Windows.Forms.ColumnHeader columnTarif;
+        private System.Windows.Forms.Label label1;
     }
 }

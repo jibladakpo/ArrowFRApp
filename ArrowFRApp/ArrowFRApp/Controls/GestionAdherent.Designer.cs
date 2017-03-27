@@ -48,8 +48,10 @@
             this.columnVille = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnCodePostal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnTypeAdhesion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.checkedListBoxAdhesion = new System.Windows.Forms.CheckedListBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listBoxTypeAdhesion = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // buttonCreerAdherent
@@ -70,6 +72,7 @@
             this.buttonModifierAdherent.TabIndex = 4;
             this.buttonModifierAdherent.Text = "Modifier";
             this.buttonModifierAdherent.UseVisualStyleBackColor = true;
+            this.buttonModifierAdherent.Click += new System.EventHandler(this.buttonModifierAdherent_Click);
             // 
             // buttonSupprimerAdherent
             // 
@@ -79,6 +82,7 @@
             this.buttonSupprimerAdherent.TabIndex = 5;
             this.buttonSupprimerAdherent.Text = "Supprimer";
             this.buttonSupprimerAdherent.UseVisualStyleBackColor = true;
+            this.buttonSupprimerAdherent.Click += new System.EventHandler(this.buttonSupprimerAdherent_Click);
             // 
             // textBoxNom
             // 
@@ -86,6 +90,7 @@
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.Size = new System.Drawing.Size(206, 22);
             this.textBoxNom.TabIndex = 6;
+            this.textBoxNom.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             // 
             // textBoxCodePostale
             // 
@@ -157,7 +162,7 @@
             // labelTypeAdhesion
             // 
             this.labelTypeAdhesion.AutoSize = true;
-            this.labelTypeAdhesion.Location = new System.Drawing.Point(30, 332);
+            this.labelTypeAdhesion.Location = new System.Drawing.Point(30, 319);
             this.labelTypeAdhesion.Name = "labelTypeAdhesion";
             this.labelTypeAdhesion.Size = new System.Drawing.Size(113, 17);
             this.labelTypeAdhesion.TabIndex = 18;
@@ -176,42 +181,46 @@
             this.listViewAdherent.GridLines = true;
             this.listViewAdherent.Location = new System.Drawing.Point(293, 77);
             this.listViewAdherent.Name = "listViewAdherent";
-            this.listViewAdherent.Size = new System.Drawing.Size(596, 418);
+            this.listViewAdherent.Size = new System.Drawing.Size(724, 418);
             this.listViewAdherent.TabIndex = 19;
             this.listViewAdherent.UseCompatibleStateImageBehavior = false;
             this.listViewAdherent.View = System.Windows.Forms.View.Details;
+            this.listViewAdherent.SelectedIndexChanged += new System.EventHandler(this.listViewAdherent_SelectedIndexChanged);
             // 
             // columnNom
             // 
             this.columnNom.Text = "Nom";
+            this.columnNom.Width = 120;
             // 
             // columnPrenom
             // 
             this.columnPrenom.Text = "Prénom";
+            this.columnPrenom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnPrenom.Width = 120;
             // 
             // columnDateNaissance
             // 
             this.columnDateNaissance.Text = "DateNaissance";
+            this.columnDateNaissance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnDateNaissance.Width = 120;
             // 
             // columnVille
             // 
             this.columnVille.Text = "Ville";
+            this.columnVille.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnVille.Width = 120;
             // 
             // columnCodePostal
             // 
             this.columnCodePostal.Text = "Code Postal";
+            this.columnCodePostal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnCodePostal.Width = 120;
             // 
             // columnTypeAdhesion
             // 
             this.columnTypeAdhesion.Text = "TypeAdhesion";
-            // 
-            // checkedListBoxAdhesion
-            // 
-            this.checkedListBoxAdhesion.FormattingEnabled = true;
-            this.checkedListBoxAdhesion.Location = new System.Drawing.Point(36, 361);
-            this.checkedListBoxAdhesion.Name = "checkedListBoxAdhesion";
-            this.checkedListBoxAdhesion.Size = new System.Drawing.Size(203, 106);
-            this.checkedListBoxAdhesion.TabIndex = 20;
+            this.columnTypeAdhesion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnTypeAdhesion.Width = 120;
             // 
             // dateTimePicker1
             // 
@@ -220,13 +229,44 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 21;
             // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(33, 472);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(75, 23);
+            this.buttonClear.TabIndex = 22;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(33, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(288, 38);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Gestion Adhérents";
+            // 
+            // listBoxTypeAdhesion
+            // 
+            this.listBoxTypeAdhesion.CheckOnClick = true;
+            this.listBoxTypeAdhesion.FormattingEnabled = true;
+            this.listBoxTypeAdhesion.Location = new System.Drawing.Point(33, 340);
+            this.listBoxTypeAdhesion.Name = "listBoxTypeAdhesion";
+            this.listBoxTypeAdhesion.Size = new System.Drawing.Size(206, 89);
+            this.listBoxTypeAdhesion.TabIndex = 1;
+            // 
             // GestionAdherent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.listBoxTypeAdhesion);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.checkedListBoxAdhesion);
             this.Controls.Add(this.listViewAdherent);
             this.Controls.Add(this.labelTypeAdhesion);
             this.Controls.Add(this.labelCodePostale);
@@ -242,7 +282,7 @@
             this.Controls.Add(this.buttonModifierAdherent);
             this.Controls.Add(this.buttonCreerAdherent);
             this.Name = "GestionAdherent";
-            this.Size = new System.Drawing.Size(991, 610);
+            this.Size = new System.Drawing.Size(1058, 610);
             this.Load += new System.EventHandler(this.Adherent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -271,7 +311,9 @@
         private System.Windows.Forms.ColumnHeader columnVille;
         private System.Windows.Forms.ColumnHeader columnCodePostal;
         private System.Windows.Forms.ColumnHeader columnTypeAdhesion;
-        private System.Windows.Forms.CheckedListBox checkedListBoxAdhesion;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckedListBox listBoxTypeAdhesion;
     }
 }

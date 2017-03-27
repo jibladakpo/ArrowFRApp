@@ -107,12 +107,12 @@ namespace ArrowFRApp
             string query;
             if (unTypeAdhesion.idTypeAdhesion == -1)
             {
-                //Création d'un nouvel adhérent    
+                //Création d'un nouveeau type d'adhésion   
                 query = "insert into typeAdhesion (libelle, tarif) values (@libelle, @tarif);";
             }
             else
             {
-                //Modification d'un adhérent
+                //Modification d'un nouveau type d'adhésion
                 query = "update typeAdhesion set  idTypeAdhesion = @id, libelle = @libelle, tarif = @tarif";
 
             }
@@ -127,7 +127,7 @@ namespace ArrowFRApp
 
                 cmd.Parameters.AddWithValue("@id", unTypeAdhesion.idTypeAdhesion);
                 cmd.Parameters.AddWithValue("@libelle", unTypeAdhesion.Libelle);
-                cmd.Parameters.AddWithValue("@libelle", unTypeAdhesion.Tarif);
+                cmd.Parameters.AddWithValue("@tarif", unTypeAdhesion.Tarif);
                 
 
                 //exécution la commande

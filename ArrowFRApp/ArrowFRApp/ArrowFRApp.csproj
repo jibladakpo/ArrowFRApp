@@ -72,6 +72,12 @@
     <Compile Include="Controls\GestionAdherent.Designer.cs">
       <DependentUpon>GestionAdherent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\GestionRecapitulatif.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GestionRecapitulatif.Designer.cs">
+      <DependentUpon>GestionRecapitulatif.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\AdherentDB.cs" />
     <Compile Include="DataAccessLayer\Initialisation.cs" />
     <Compile Include="DataAccessLayer\TypeAdhesionDB.cs" />
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\GestionAdherent.resx">
       <DependentUpon>GestionAdherent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GestionRecapitulatif.resx">
+      <DependentUpon>GestionRecapitulatif.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormArrowFR.resx">
       <DependentUpon>FormArrowFR.cs</DependentUpon>

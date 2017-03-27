@@ -59,6 +59,18 @@ namespace ArrowFRApp.Controls
             else
                 GestionTypeAdhesion.Instance.BringToFront();
         }
+
+        private void buttonRecapitulatif_Click(object sender, EventArgs e)
+        {
+            if (!panelGestion.Controls.Contains(GestionRecapitulatif.Instance))
+            {
+                panelGestion.Controls.Add(GestionRecapitulatif.Instance);
+                GestionRecapitulatif.Instance.Dock = DockStyle.Fill;
+                GestionRecapitulatif.Instance.BringToFront();
+            }
+            else
+                GestionRecapitulatif.Instance.BringToFront();
+        }
     }
         
     }

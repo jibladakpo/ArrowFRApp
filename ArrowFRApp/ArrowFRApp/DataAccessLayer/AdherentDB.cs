@@ -116,7 +116,7 @@ namespace ArrowFRApp
             else
             {
                 //Modification d'un adhérent
-                query = "update adherent set  idAdherent = @id, nom = @nom, prenom = @prenom,  dateNaissance = @dateNaissance,ville = @ville,codePostal = @codePostal,  typeAdhesion = typeAdhesion where idAdherent = @id";
+                query = "update adherent set  idAdherent = @id, nom = @nom, prenom = @prenom,  dateNaissance = @dateNaissance,ville = @ville,codePostal = @codePostal,  typeAdhesion = @typeAdhesion where idAdherent = @id";
 
             }
 
@@ -138,6 +138,7 @@ namespace ArrowFRApp
 
                 //exécution la commande
                 cmd.ExecuteNonQuery();
+                
 
             }
         }
@@ -148,7 +149,19 @@ namespace ArrowFRApp
         /// <param name="id"></param>
         public static void Delete(int id)
         {
+            string connectionString = Initialisation.InitialiserConnexion();
+            string query;
+                   
+            query = "delete from adherent where idTypeAdhesion='"+id+"'";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
 
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //exécution la commande
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }
