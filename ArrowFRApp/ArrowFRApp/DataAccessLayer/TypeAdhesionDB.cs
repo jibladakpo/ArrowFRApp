@@ -113,7 +113,7 @@ namespace ArrowFRApp
             else
             {
                 //Modification d'un nouveau type d'adhésion
-                query = "update typeAdhesion set  idTypeAdhesion = @id, libelle = @libelle, tarif = @tarif";
+                query = "update typeAdhesion set  idTypeAdhesion = @idtype, libelle = @libelle, tarif = @tarif";
 
             }
 
@@ -125,7 +125,7 @@ namespace ArrowFRApp
                 //Create Command
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
-                cmd.Parameters.AddWithValue("@id", unTypeAdhesion.idTypeAdhesion);
+                cmd.Parameters.AddWithValue("@idtype", unTypeAdhesion.idTypeAdhesion);
                 cmd.Parameters.AddWithValue("@libelle", unTypeAdhesion.Libelle);
                 cmd.Parameters.AddWithValue("@tarif", unTypeAdhesion.Tarif);
                 

@@ -49,11 +49,15 @@ namespace ArrowFRApp
 
         private void buttonCreerTypeAdhesion_Click(object sender, EventArgs e)
         {
+            listViewTypeAdhesion.Refresh();
             TypeAdhesionDB typeadhDB = new TypeAdhesionDB();
             TypeAdhesionDB typeDB = new TypeAdhesionDB();
-            TypeAdhesion ta = new TypeAdhesion(0,textBoxLibelle.Text, Convert.ToInt32(textBoxTarif.Text));
+            Guid guid = Guid.NewGuid();
+            Random random = new Random();
+            int i = random.Next();
+            TypeAdhesion ta = new TypeAdhesion(i,textBoxLibelle.Text, Convert.ToInt32(textBoxTarif.Text));
             typeadhDB.Save(ta);
-            listViewTypeAdhesion.Refresh();
+            
             MessageBox.Show("Type Adhesion ajouté: " + textBoxLibelle.Text);
         }
 

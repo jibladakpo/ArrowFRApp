@@ -51,27 +51,28 @@ namespace ArrowFRApp
 
                 listViewAdherent.Items.Add(listItem);
             }
-            //Récupération de tous les types adhésions et affichage dans une listbox qui pour nom listBoxTypeAdhesion
+            //Récupération de tous les types adhésions et affichage dans une listbox qui a pour nom listBoxTypeAdhesion
             TypeAdhesionDB adhesionDB = new TypeAdhesionDB();
             List<ArrowFRApp.TypeAdhesion> lesTypesAdhesions = adhesionDB.GetAllTypeAdhesion();
             foreach (var item in lesTypesAdhesions)
             {
                 CheckedListBox listBoxItem = new CheckedListBox();
-
-                listBoxTypeAdhesion.Items.Add(item.idTypeAdhesion + item.Libelle);
+                
+                listBoxTypeAdhesion.Items.Add(item.idTypeAdhesion);
                 
             }
         }
 
         private void buttonCreerAdherent_Click(object sender, EventArgs e)
         {
+            listViewAdherent.Refresh();
             AdherentDB adhDB = new AdherentDB();
             TypeAdhesionDB typeDB = new TypeAdhesionDB();
-            var index = listBoxTypeAdhesion.SelectedIndex;
-            TypeAdhesion t = typeDB.GetTypeAdhesion(index);
+            var item = Convert.ToInt32(listBoxTypeAdhesion.SelectedItem);
+            TypeAdhesion t = typeDB.GetTypeAdhesion(item);
             Adherent a = new Adherent(textBoxNom.Text, textBoxPrenom.Text, dateTimePicker1.Value, textBoxVille.Text, textBoxCodePostale.Text, t);
             adhDB.Save(a);
-            listViewAdherent.Refresh();
+            
             MessageBox.Show("Adherent ajouté: "+ textBoxNom.Text +" "+textBoxPrenom.Text);
         }
 

@@ -252,11 +252,13 @@
             // listBoxTypeAdhesion
             // 
             this.listBoxTypeAdhesion.CheckOnClick = true;
+            this.listBoxTypeAdhesion.ColumnWidth = 1;
             this.listBoxTypeAdhesion.FormattingEnabled = true;
             this.listBoxTypeAdhesion.Location = new System.Drawing.Point(33, 340);
             this.listBoxTypeAdhesion.Name = "listBoxTypeAdhesion";
             this.listBoxTypeAdhesion.Size = new System.Drawing.Size(206, 89);
             this.listBoxTypeAdhesion.TabIndex = 1;
+            this.listBoxTypeAdhesion.UseTabStops = false;
             // 
             // GestionAdherent
             // 
