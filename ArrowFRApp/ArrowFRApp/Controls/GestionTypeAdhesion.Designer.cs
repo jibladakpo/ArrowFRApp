@@ -114,6 +114,7 @@
             this.listViewTypeAdhesion.TabIndex = 30;
             this.listViewTypeAdhesion.UseCompatibleStateImageBehavior = false;
             this.listViewTypeAdhesion.View = System.Windows.Forms.View.Details;
+            this.listViewTypeAdhesion.SelectedIndexChanged += new System.EventHandler(this.listViewTypeAdhesion_SelectedIndexChanged);
             // 
             // columnLibelle
             // 

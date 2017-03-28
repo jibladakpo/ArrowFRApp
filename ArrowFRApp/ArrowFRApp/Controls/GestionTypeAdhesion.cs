@@ -40,8 +40,8 @@ namespace ArrowFRApp
                 ListViewItem listItem = new ListViewItem(item.Libelle);
 
                 listItem.SubItems.Add(item.Tarif.ToString());
-                
-                
+
+
 
                 listViewTypeAdhesion.Items.Add(listItem);
             }
@@ -52,13 +52,14 @@ namespace ArrowFRApp
             listViewTypeAdhesion.Refresh();
             TypeAdhesionDB typeadhDB = new TypeAdhesionDB();
             TypeAdhesionDB typeDB = new TypeAdhesionDB();
-            Guid guid = Guid.NewGuid();
+            /*Guid guid = Guid.NewGuid();
             Random random = new Random();
-            int i = random.Next();
-            TypeAdhesion ta = new TypeAdhesion(i,textBoxLibelle.Text, Convert.ToInt32(textBoxTarif.Text));
+            int i = random.Next();*/
+            TypeAdhesion ta = new TypeAdhesion(textBoxLibelle.Text, Convert.ToInt32(textBoxTarif.Text));
             typeadhDB.Save(ta);
-            
+
             MessageBox.Show("Type Adhesion ajouté: " + textBoxLibelle.Text);
+            reload();
         }
 
         private void buttonModifierTypeAdhesion_Click(object sender, EventArgs e)
@@ -69,6 +70,33 @@ namespace ArrowFRApp
         private void buttonSupprimerTypeAdhesion_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void reload()
+        {
+            listViewTypeAdhesion.Items.Clear();
+            TypeAdhesionDB adhDB = new TypeAdhesionDB();
+            List<ArrowFRApp.TypeAdhesion> lesTypesAdhesions = adhDB.GetAllTypeAdhesion();
+            foreach (var item in lesTypesAdhesions)
+            {
+
+                ListViewItem listItem = new ListViewItem(item.Libelle);
+
+                listItem.SubItems.Add(item.Tarif.ToString());
+
+
+
+                listViewTypeAdhesion.Items.Add(listItem);
+            }
+        }
+
+        private void listViewTypeAdhesion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewTypeAdhesion.SelectedItems.Count > 0)
+            {
+                textBoxLibelle.Text = listViewTypeAdhesion.SelectedItems[0].Text;
+                textBoxTarif.Text = listViewTypeAdhesion.SelectedItems[0].SubItems[1].Text;
+            }
         }
     }
 }
