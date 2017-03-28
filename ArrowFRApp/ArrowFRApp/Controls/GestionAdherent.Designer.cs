@@ -88,29 +88,28 @@
             // 
             this.textBoxNom.Location = new System.Drawing.Point(33, 97);
             this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(206, 22);
+            this.textBoxNom.Size = new System.Drawing.Size(225, 22);
             this.textBoxNom.TabIndex = 6;
-            this.textBoxNom.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             // 
             // textBoxCodePostale
             // 
             this.textBoxCodePostale.Location = new System.Drawing.Point(33, 294);
             this.textBoxCodePostale.Name = "textBoxCodePostale";
-            this.textBoxCodePostale.Size = new System.Drawing.Size(206, 22);
+            this.textBoxCodePostale.Size = new System.Drawing.Size(225, 22);
             this.textBoxCodePostale.TabIndex = 8;
             // 
             // textBoxVille
             // 
             this.textBoxVille.Location = new System.Drawing.Point(33, 248);
             this.textBoxVille.Name = "textBoxVille";
-            this.textBoxVille.Size = new System.Drawing.Size(206, 22);
+            this.textBoxVille.Size = new System.Drawing.Size(225, 22);
             this.textBoxVille.TabIndex = 9;
             // 
             // textBoxPrenom
             // 
             this.textBoxPrenom.Location = new System.Drawing.Point(33, 144);
             this.textBoxPrenom.Name = "textBoxPrenom";
-            this.textBoxPrenom.Size = new System.Drawing.Size(206, 22);
+            this.textBoxPrenom.Size = new System.Drawing.Size(225, 22);
             this.textBoxPrenom.TabIndex = 11;
             // 
             // labelNom
@@ -121,7 +120,6 @@
             this.labelNom.Size = new System.Drawing.Size(37, 17);
             this.labelNom.TabIndex = 12;
             this.labelNom.Text = "Nom";
-            this.labelNom.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelPrenom
             // 
@@ -181,11 +179,13 @@
             this.listViewAdherent.GridLines = true;
             this.listViewAdherent.Location = new System.Drawing.Point(293, 77);
             this.listViewAdherent.Name = "listViewAdherent";
-            this.listViewAdherent.Size = new System.Drawing.Size(724, 418);
+            this.listViewAdherent.Size = new System.Drawing.Size(969, 418);
             this.listViewAdherent.TabIndex = 19;
             this.listViewAdherent.UseCompatibleStateImageBehavior = false;
             this.listViewAdherent.View = System.Windows.Forms.View.Details;
             this.listViewAdherent.SelectedIndexChanged += new System.EventHandler(this.listViewAdherent_SelectedIndexChanged);
+            this.listViewAdherent.VisibleChanged += new System.EventHandler(this.Adherent_Load);
+            this.listViewAdherent.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewAdherent_MouseClick);
             // 
             // columnNom
             // 
@@ -231,11 +231,11 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(33, 472);
+            this.buttonClear.Location = new System.Drawing.Point(668, 511);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(75, 23);
+            this.buttonClear.Size = new System.Drawing.Size(110, 50);
             this.buttonClear.TabIndex = 22;
-            this.buttonClear.Text = "Clear";
+            this.buttonClear.Text = "Effacer";
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
@@ -258,7 +258,7 @@
             "Type d\'adhésion:"});
             this.listBoxTypeAdhesion.Location = new System.Drawing.Point(33, 340);
             this.listBoxTypeAdhesion.Name = "listBoxTypeAdhesion";
-            this.listBoxTypeAdhesion.Size = new System.Drawing.Size(206, 89);
+            this.listBoxTypeAdhesion.Size = new System.Drawing.Size(225, 89);
             this.listBoxTypeAdhesion.TabIndex = 1;
             this.listBoxTypeAdhesion.UseTabStops = false;
             // 
@@ -286,7 +286,7 @@
             this.Controls.Add(this.buttonModifierAdherent);
             this.Controls.Add(this.buttonCreerAdherent);
             this.Name = "GestionAdherent";
-            this.Size = new System.Drawing.Size(1058, 610);
+            this.Size = new System.Drawing.Size(1275, 610);
             this.Load += new System.EventHandler(this.Adherent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

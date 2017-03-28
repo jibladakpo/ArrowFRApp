@@ -143,22 +143,26 @@ namespace ArrowFRApp
             }
         }
 
+
         /// <summary>
         /// TODO.  Supprimer adherent
         /// </summary>
         /// <param name="id"></param>
-        public static void Delete(int id)
+        public void Delete(string nom,string prenom)
         {
             string connectionString = Initialisation.InitialiserConnexion();
             string query;
                    
-            query = "delete from adherent where idTypeAdhesion='"+id+"'";
+            query = "delete from adherent where nom=@nom and prenom=@prenom";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
 
                 //Create Command
                 MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@nom", nom);
+                cmd.Parameters.AddWithValue("@prenom", prenom);
+
                 //exécution la commande
                 cmd.ExecuteNonQuery();
             }
