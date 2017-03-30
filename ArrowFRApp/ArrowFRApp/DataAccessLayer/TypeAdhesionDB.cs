@@ -37,11 +37,9 @@ namespace ArrowFRApp
                     {
 
                         int idType = Convert.ToInt32(dataReader["idTypeAdhesion"]);
-                        string nom = dataReader["Libelle"].ToString();
+                        string libelle = dataReader["Libelle"].ToString();
                         int tarif = Convert.ToInt32(dataReader["Tarif"]);
-                        leTypeAdhesion = new TypeAdhesion(idType, nom, tarif);
-
-
+                        leTypeAdhesion = new TypeAdhesion(libelle, tarif);
                     }
                 }
             }
@@ -108,12 +106,12 @@ namespace ArrowFRApp
             if (unTypeAdhesion.idTypeAdhesion == -1)
             {
                 //Création d'un nouveeau type d'adhésion   
-                query = "insert into typeAdhesion (libelle, tarif) values (@libelle, @tarif);";
+                query = "insert into typeadhesion (libelle, tarif) values (@libelle, @tarif);";
             }
             else
             {
                 //Modification d'un nouveau type d'adhésion
-                query = "update typeAdhesion set  idTypeAdhesion = @idtype, libelle = @libelle, tarif = @tarif";
+                query = "update typeadhesion set  idTypeAdhesion = @idtype, libelle = @libelle, tarif = @tarif";
 
             }
 

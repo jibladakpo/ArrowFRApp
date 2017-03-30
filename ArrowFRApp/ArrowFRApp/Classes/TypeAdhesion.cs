@@ -20,9 +20,9 @@ namespace ArrowFRApp
         /// <param name="leType">type d'ahésion</param>
         /// <param name="leLibelle">le libellé</param>
         /// <param name="leTarif">le tarif</param>
-        public TypeAdhesion(int leType, string leLibelle, int leTarif)
+        public TypeAdhesion(string leLibelle, int leTarif)
         {
-            idTypeAdhesion = leType;
+            idTypeAdhesion = -1;
             Libelle = leLibelle;
             Tarif = leTarif;
         }
