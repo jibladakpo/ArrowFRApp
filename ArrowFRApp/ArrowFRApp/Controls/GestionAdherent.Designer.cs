@@ -226,7 +226,7 @@
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(33, 199);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(225, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 21;
             // 
             // buttonClear
@@ -254,8 +254,6 @@
             this.listBoxTypeAdhesion.CheckOnClick = true;
             this.listBoxTypeAdhesion.ColumnWidth = 1;
             this.listBoxTypeAdhesion.FormattingEnabled = true;
-            this.listBoxTypeAdhesion.Items.AddRange(new object[] {
-            "Type d\'adhésion:"});
             this.listBoxTypeAdhesion.Location = new System.Drawing.Point(33, 340);
             this.listBoxTypeAdhesion.Name = "listBoxTypeAdhesion";
             this.listBoxTypeAdhesion.Size = new System.Drawing.Size(206, 89);

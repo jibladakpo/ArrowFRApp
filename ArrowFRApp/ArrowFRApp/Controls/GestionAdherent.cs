@@ -58,7 +58,7 @@ namespace ArrowFRApp
             {
                 CheckedListBox listBoxItem = new CheckedListBox();
                 
-                listBoxTypeAdhesion.Items.Add(item.Libelle);
+                listBoxTypeAdhesion.Items.Add(item.idTypeAdhesion);
                 
             }
         }
@@ -68,8 +68,8 @@ namespace ArrowFRApp
             listViewAdherent.Refresh();
             AdherentDB adhDB = new AdherentDB();
             TypeAdhesionDB typeDB = new TypeAdhesionDB();
-            var index = listBoxTypeAdhesion.SelectedIndex;
-            TypeAdhesion t = typeDB.GetTypeAdhesion(index);
+            var item = Convert.ToInt32(listBoxTypeAdhesion.SelectedItem);
+            TypeAdhesion t = typeDB.GetTypeAdhesion(item);
             Adherent a = new Adherent(textBoxNom.Text, textBoxPrenom.Text, dateTimePicker1.Value, textBoxVille.Text, textBoxCodePostale.Text, t);
             adhDB.Save(a);
             
