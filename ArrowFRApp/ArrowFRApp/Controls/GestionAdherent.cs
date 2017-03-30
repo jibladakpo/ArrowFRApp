@@ -29,6 +29,11 @@ namespace ArrowFRApp
             InitializeComponent();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Adherent_Load(object sender, EventArgs e)
         {
             //Récupération de tous les adhérents et affichage dans une listView qui a pour nom listViewAdherent
@@ -69,80 +74,30 @@ namespace ArrowFRApp
             adhDB.Save(a);
             
             MessageBox.Show("Adherent ajouté: "+ textBoxNom.Text +" "+textBoxPrenom.Text);
-
-            //Efface champs
-            textBoxNom.Clear();
-            textBoxPrenom.Clear();
-            dateTimePicker1.Value = DateTime.Now;
-            textBoxVille.Clear();
-            textBoxCodePostale.Clear();
-            listBoxTypeAdhesion.ClearSelected();
-            foreach (int i in listBoxTypeAdhesion.CheckedIndices)
-            {
-                listBoxTypeAdhesion.SetItemCheckState(i, CheckState.Unchecked);
-            }
-            //actualiser
-            reload();
         }
 
         private void buttonModifierAdherent_Click(object sender, EventArgs e)
         {
-            if (listViewAdherent.SelectedItems.Count > 0)
-            {
-                AdherentDB adhDB = new AdherentDB();
-                TypeAdhesionDB typeDB = new TypeAdhesionDB();
-                var index = listBoxTypeAdhesion.SelectedIndex;
-                TypeAdhesion t = typeDB.GetTypeAdhesion(index);
-                Adherent a = new Adherent(textBoxNom.Text, textBoxPrenom.Text, dateTimePicker1.Value, textBoxVille.Text, textBoxCodePostale.Text, t);
-                adhDB.Save(a);
-                listViewAdherent.Refresh();
-                MessageBox.Show("Infos modifiées sur: " + textBoxNom.Text + " " + textBoxPrenom.Text);
-
-                //Efface champs
-                textBoxNom.Clear();
-                textBoxPrenom.Clear();
-                dateTimePicker1.Value = DateTime.Now;
-                textBoxVille.Clear();
-                textBoxCodePostale.Clear();
-                listBoxTypeAdhesion.ClearSelected();
-                foreach (int i in listBoxTypeAdhesion.CheckedIndices)
-                {
-                    listBoxTypeAdhesion.SetItemCheckState(i, CheckState.Unchecked);
-                }
-                //actualiser
-                reload();
-            }
+            AdherentDB adhDB = new AdherentDB();
+            TypeAdhesionDB typeDB = new TypeAdhesionDB();
+            var index = listBoxTypeAdhesion.SelectedIndex;
+            TypeAdhesion t = typeDB.GetTypeAdhesion(index);
+            Adherent a = new Adherent(textBoxNom.Text, textBoxPrenom.Text, dateTimePicker1.Value, textBoxVille.Text, textBoxCodePostale.Text, t);
+            adhDB.Save(a);
+            listViewAdherent.Refresh();
+            MessageBox.Show("Infos modifiées sur: " + textBoxNom.Text + " " + textBoxPrenom.Text);
         }
 
         private void buttonSupprimerAdherent_Click(object sender, EventArgs e)
         {
+            AdherentDB adhDB = new AdherentDB();
             
-            
-            if (listViewAdherent.SelectedItems.Count > 0)
+            if (listViewAdherent.FullRowSelect == true)
             {
-                AdherentDB adhDB = new AdherentDB();
-                ListViewItem listItem = listViewAdherent.SelectedItems[0];
-                string nom = listItem.SubItems[0].Text;
-                string prenom = listViewAdherent.SelectedItems[0].SubItems[1].Text;
-                adhDB.Delete(nom,prenom);
-                MessageBox.Show("Suprimer l'adhérent " + textBoxNom.Text + " " + textBoxPrenom.Text + " ?");
-                //Efface champs
-                textBoxNom.Clear();
-                textBoxPrenom.Clear();
-                dateTimePicker1.Value = DateTime.Now;
-                textBoxVille.Clear();
-                textBoxCodePostale.Clear();
-                listBoxTypeAdhesion.ClearSelected();
-                foreach (int i in listBoxTypeAdhesion.CheckedIndices)
-                {
-                    listBoxTypeAdhesion.SetItemCheckState(i, CheckState.Unchecked);
-                }
-                //actualiser
-                reload();
-
+               // adhDB.Delete();
             }
         }
-        //Effacer champs formulaire de saisie d'un adhérent
+
         private void buttonClear_Click(object sender, EventArgs e)
         {
             textBoxNom.Clear();
@@ -151,9 +106,14 @@ namespace ArrowFRApp
             textBoxVille.Clear();
             textBoxCodePostale.Clear();
             
+
+           
         } 
 
-        
+        private void textBoxNom_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
 
         private void listViewAdherent_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -169,33 +129,9 @@ namespace ArrowFRApp
             }
           
         }
-        private void reload()
-        {
-            listViewAdherent.Items.Clear();
-            AdherentDB adhDB = new AdherentDB();
-            List<ArrowFRApp.Adherent> lesAdherents = adhDB.GetAllAdherent();
-            foreach (var item in lesAdherents)
-            {
 
-                ListViewItem listItem = new ListViewItem(item.GetNom());
-                listItem.SubItems.Add(item.GetPrenom());
-                listItem.SubItems.Add(item.GetDateDeNaissance().ToShortDateString());
-                listItem.SubItems.Add(item.GetVille());
-                listItem.SubItems.Add(item.GetCodePostal());
-                listItem.SubItems.Add(item.GetTypeAdherent().Libelle);
+        
 
-                listViewAdherent.Items.Add(listItem);
-            }
-        }
-        private void listViewAdherent_MouseClick(object sender, MouseEventArgs e)
-        {
-            textBoxNom.Text = listViewAdherent.SelectedItems[0].Text;
-            textBoxPrenom.Text = listViewAdherent.SelectedItems[0].SubItems[1].Text;
-            dateTimePicker1.Text = listViewAdherent.SelectedItems[0].SubItems[2].Text;
-            textBoxVille.Text = listViewAdherent.SelectedItems[0].SubItems[3].Text;
-            textBoxCodePostale.Text = listViewAdherent.SelectedItems[0].SubItems[4].Text;
-            listBoxTypeAdhesion.Text = listViewAdherent.SelectedItems[0].SubItems[5].Text;
-        }    
        
     }
 }

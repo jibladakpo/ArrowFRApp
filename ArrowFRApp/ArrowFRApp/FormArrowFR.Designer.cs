@@ -38,7 +38,7 @@
             // 
             // buttonEntrer
             // 
-            this.buttonEntrer.Location = new System.Drawing.Point(700, 426);
+            this.buttonEntrer.Location = new System.Drawing.Point(649, 443);
             this.buttonEntrer.Name = "buttonEntrer";
             this.buttonEntrer.Size = new System.Drawing.Size(275, 82);
             this.buttonEntrer.TabIndex = 0;
@@ -49,7 +49,7 @@
             // pictureArrowFR
             // 
             this.pictureArrowFR.Image = ((System.Drawing.Image)(resources.GetObject("pictureArrowFR.Image")));
-            this.pictureArrowFR.Location = new System.Drawing.Point(700, 127);
+            this.pictureArrowFR.Location = new System.Drawing.Point(649, 135);
             this.pictureArrowFR.Name = "pictureArrowFR";
             this.pictureArrowFR.Size = new System.Drawing.Size(275, 272);
             this.pictureArrowFR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -60,7 +60,7 @@
             // 
             this.labelTitre.AutoSize = true;
             this.labelTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitre.Location = new System.Drawing.Point(526, 35);
+            this.labelTitre.Location = new System.Drawing.Point(487, 28);
             this.labelTitre.Name = "labelTitre";
             this.labelTitre.Size = new System.Drawing.Size(606, 69);
             this.labelTitre.TabIndex = 2;
@@ -73,7 +73,7 @@
             this.panelAccueil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAccueil.Location = new System.Drawing.Point(0, 0);
             this.panelAccueil.Name = "panelAccueil";
-            this.panelAccueil.Size = new System.Drawing.Size(1581, 689);
+            this.panelAccueil.Size = new System.Drawing.Size(1474, 689);
             this.panelAccueil.TabIndex = 3;
             this.panelAccueil.Visible = false;
             // 
@@ -82,7 +82,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(1581, 689);
+            this.ClientSize = new System.Drawing.Size(1474, 689);
             this.Controls.Add(this.panelAccueil);
             this.Controls.Add(this.labelTitre);
             this.Controls.Add(this.pictureArrowFR);
