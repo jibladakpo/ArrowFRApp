@@ -37,9 +37,9 @@ namespace ArrowFRApp
                     {
 
                         int idType = Convert.ToInt32(dataReader["idTypeAdhesion"]);
-                        string nom = dataReader["Libelle"].ToString();
+                        string libelle = dataReader["Libelle"].ToString();
                         int tarif = Convert.ToInt32(dataReader["Tarif"]);
-                        leTypeAdhesion = new TypeAdhesion(idType, nom, tarif);
+                        leTypeAdhesion = new TypeAdhesion(idType, libelle, tarif);
 
 
                     }

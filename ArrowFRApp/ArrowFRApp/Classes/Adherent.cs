@@ -170,6 +170,14 @@ namespace ArrowFRApp
         /// <summary>
         /// setter pour  la date de naissance
         /// </summary>
+        public void SetDateNaissance(DateTime dateNaissance)
+        {
+            AnneeNaissance = dateNaissance;
+        }
+
+        /// <summary>
+        /// setter pour  la date de naissance
+        /// </summary>
         public void GetDateDeNaissance(DateTime dateNaissance)
         {
             AnneeNaissance = dateNaissance;
@@ -179,6 +187,14 @@ namespace ArrowFRApp
         /// Setter pour  le type d'adhesion
         /// </summary>
         public void GetTypeAdherent(TypeAdhesion type )
+        {
+            TypeAdhesion = type;
+        }
+
+        /// <summary>
+        /// setter pour  le type d'adhésion
+        /// </summary>
+        public void SetTypeAdherent(TypeAdhesion type)
         {
             TypeAdhesion = type;
         }

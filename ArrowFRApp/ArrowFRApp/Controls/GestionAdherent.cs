@@ -90,11 +90,20 @@ namespace ArrowFRApp
         private void buttonModifierAdherent_Click(object sender, EventArgs e)
         {
             AdherentDB adhDB = new AdherentDB();
+            AdherentDB adhesionDB = new AdherentDB();
             TypeAdhesionDB typeDB = new TypeAdhesionDB();
-            var index = listBoxTypeAdhesion.SelectedIndex;
+            int index = listBoxTypeAdhesion.SelectedIndex;
             TypeAdhesion t = typeDB.GetTypeAdhesion(index);
-            Adherent a = new Adherent(textBoxNom.Text, textBoxPrenom.Text, dateTimePicker1.Value, textBoxVille.Text, textBoxCodePostale.Text, t);
-            adhDB.Save(a);
+            Adherent a1 = adhDB.GetAdherent(Convert.ToInt32(listViewAdherent.SelectedItems[0].SubItems[6].Text));
+            a1.SetNom(textBoxNom.Text);
+            a1.SetPrenom(textBoxPrenom.Text);
+            a1.SetDateNaissance(dateTimePicker1.Value);
+            a1.SetVille(textBoxVille.Text);
+            a1.SetCodePostal(textBoxCodePostale.Text);
+            a1.SetTypeAdherent(t);
+
+            adhDB.Save(a1);
+            
             
             MessageBox.Show("Infos modifiées sur: " + textBoxNom.Text + " " + textBoxPrenom.Text);
             //Efface champs

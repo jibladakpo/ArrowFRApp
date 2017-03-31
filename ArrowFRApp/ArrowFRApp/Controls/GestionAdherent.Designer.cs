@@ -40,7 +40,6 @@
             this.labelDateNaissance = new System.Windows.Forms.Label();
             this.labelVille = new System.Windows.Forms.Label();
             this.labelCodePostale = new System.Windows.Forms.Label();
-            this.labelTypeAdhesion = new System.Windows.Forms.Label();
             this.listViewAdherent = new System.Windows.Forms.ListView();
             this.columnNom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnPrenom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -158,15 +157,6 @@
             this.labelCodePostale.TabIndex = 16;
             this.labelCodePostale.Text = "Code Postale";
             // 
-            // labelTypeAdhesion
-            // 
-            this.labelTypeAdhesion.AutoSize = true;
-            this.labelTypeAdhesion.Location = new System.Drawing.Point(30, 319);
-            this.labelTypeAdhesion.Name = "labelTypeAdhesion";
-            this.labelTypeAdhesion.Size = new System.Drawing.Size(113, 17);
-            this.labelTypeAdhesion.TabIndex = 18;
-            this.labelTypeAdhesion.Text = "Type d\'adhésion";
-            // 
             // listViewAdherent
             // 
             this.listViewAdherent.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -254,6 +244,8 @@
             this.listBoxTypeAdhesion.CheckOnClick = true;
             this.listBoxTypeAdhesion.ColumnWidth = 1;
             this.listBoxTypeAdhesion.FormattingEnabled = true;
+            this.listBoxTypeAdhesion.Items.AddRange(new object[] {
+            "Type adhésion:"});
             this.listBoxTypeAdhesion.Location = new System.Drawing.Point(33, 340);
             this.listBoxTypeAdhesion.Name = "listBoxTypeAdhesion";
             this.listBoxTypeAdhesion.Size = new System.Drawing.Size(236, 89);
@@ -275,7 +267,6 @@
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.listViewAdherent);
-            this.Controls.Add(this.labelTypeAdhesion);
             this.Controls.Add(this.labelCodePostale);
             this.Controls.Add(this.labelVille);
             this.Controls.Add(this.labelDateNaissance);
@@ -310,7 +301,6 @@
         private System.Windows.Forms.Label labelDateNaissance;
         private System.Windows.Forms.Label labelVille;
         private System.Windows.Forms.Label labelCodePostale;
-        private System.Windows.Forms.Label labelTypeAdhesion;
         private System.Windows.Forms.ListView listViewAdherent;
         private System.Windows.Forms.ColumnHeader columnNom;
         private System.Windows.Forms.ColumnHeader columnPrenom;

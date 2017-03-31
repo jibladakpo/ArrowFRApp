@@ -27,6 +27,14 @@ namespace ArrowFRApp
             Tarif = leTarif;
         }
 
+        //Constructeur sans id
+        public TypeAdhesion(string leLibelle, int leTarif)
+        {
+            idTypeAdhesion = -1;
+            Libelle = leLibelle;
+            Tarif = leTarif;
+        }
+
         /// <summary>
         /// ReductionTarif applique une réduction au tarif de l'adhésion. On arrondi à la valeur entière la plus proche.
         /// </summary>
@@ -40,5 +48,7 @@ namespace ArrowFRApp
 
 
 
+
+        public int id { get; set; }
     }
 }

@@ -51,14 +51,17 @@ namespace ArrowFRApp
         {
             listViewTypeAdhesion.Refresh();
             TypeAdhesionDB typeadhDB = new TypeAdhesionDB();
-            TypeAdhesionDB typeDB = new TypeAdhesionDB();
-            Guid guid = Guid.NewGuid();
-            Random random = new Random();
-            int i = random.Next();
-            TypeAdhesion ta = new TypeAdhesion(i,textBoxLibelle.Text, Convert.ToInt32(textBoxTarif.Text));
+            TypeAdhesionDB typeDB = new TypeAdhesionDB();  
+            TypeAdhesion ta = new TypeAdhesion(textBoxLibelle.Text, Convert.ToInt32(textBoxTarif.Text));
             typeadhDB.Save(ta);
             
             MessageBox.Show("Type Adhesion ajouté: " + textBoxLibelle.Text);
+            //Efface champs
+            textBoxLibelle.Clear();
+            textBoxTarif.Clear();
+
+            //actualiser
+            reload();
         }
 
         private void buttonModifierTypeAdhesion_Click(object sender, EventArgs e)
@@ -98,6 +101,7 @@ namespace ArrowFRApp
 
                 listItem.SubItems.Add(item.Tarif.ToString());
                 listItem.SubItems.Add(item.idTypeAdhesion.ToString());
+
                 listViewTypeAdhesion.Items.Add(listItem);
             }
         }
