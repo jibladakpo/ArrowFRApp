@@ -49,9 +49,8 @@ namespace ArrowFRApp
 
         private void buttonCreerTypeAdhesion_Click(object sender, EventArgs e)
         {
-            listViewTypeAdhesion.Refresh();
-            TypeAdhesionDB typeadhDB = new TypeAdhesionDB();
-            TypeAdhesionDB typeDB = new TypeAdhesionDB();  
+            
+            TypeAdhesionDB typeadhDB = new TypeAdhesionDB(); 
             TypeAdhesion ta = new TypeAdhesion(textBoxLibelle.Text, Convert.ToInt32(textBoxTarif.Text));
             typeadhDB.Save(ta);
             
@@ -66,7 +65,19 @@ namespace ArrowFRApp
 
         private void buttonModifierTypeAdhesion_Click(object sender, EventArgs e)
         {
+            TypeAdhesionDB typeadhDB = new TypeAdhesionDB();
+            TypeAdhesion a1 = typeadhDB.GetTypeAdhesion(Convert.ToInt32(listViewTypeAdhesion.SelectedItems[0].SubItems[2].Text));
+            a1.Libelle = textBoxLibelle.Text;
+            a1.Tarif = Convert.ToInt32(textBoxTarif.Text);
+            
+            typeadhDB.Save(a1);
+            MessageBox.Show("Type Adhesion modifié: ");
+            //Efface champs
+            textBoxLibelle.Clear();
+            textBoxTarif.Clear();
 
+            //actualiser
+            reload();
         }
 
         private void buttonSupprimerTypeAdhesion_Click(object sender, EventArgs e)
@@ -88,7 +99,7 @@ namespace ArrowFRApp
                 reload();
             }
         }
-
+        //actualisation de la listview
         private void reload()
         {
             listViewTypeAdhesion.Items.Clear();
@@ -107,7 +118,7 @@ namespace ArrowFRApp
         }
 
        
-
+        //aficher infos dans des textbox du type d'adhésion selectionner dans la listview
         private void listViewTypeAdhesion_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (listViewTypeAdhesion.SelectedItems.Count > 0)

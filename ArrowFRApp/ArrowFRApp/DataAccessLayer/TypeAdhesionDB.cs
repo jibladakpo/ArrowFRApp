@@ -112,8 +112,8 @@ namespace ArrowFRApp
             }
             else
             {
-                //Modification d'un nouveau type d'adhésion
-                query = "update typeAdhesion set  idTypeAdhesion = @idtype, libelle = @libelle, tarif = @tarif";
+                //Modification d'un type d'adhésion
+                query = "update typeAdhesion set  idTypeAdhesion = @idtype, libelle = @libelle, tarif = @tarif where idTypeAdhesion = @idtype";
 
             }
 

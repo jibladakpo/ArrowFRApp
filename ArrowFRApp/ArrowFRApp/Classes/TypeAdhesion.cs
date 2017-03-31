@@ -14,6 +14,13 @@ namespace ArrowFRApp
         public string Libelle { get; set; }
         public int Tarif { get; set; }
 
+        //Constructeur sans id
+        public TypeAdhesion(string leLibelle, int leTarif)
+        {
+            idTypeAdhesion = -1;
+            Libelle = leLibelle;
+            Tarif = leTarif;
+        }
         /// <summary>
         /// Constructeur de la classe
         /// </summary>
@@ -22,18 +29,13 @@ namespace ArrowFRApp
         /// <param name="leTarif">le tarif</param>
         public TypeAdhesion(int leType, string leLibelle, int leTarif)
         {
+            idTypeAdhesion = -1;
             idTypeAdhesion = leType;
             Libelle = leLibelle;
             Tarif = leTarif;
         }
 
-        //Constructeur sans id
-        public TypeAdhesion(string leLibelle, int leTarif)
-        {
-            idTypeAdhesion = -1;
-            Libelle = leLibelle;
-            Tarif = leTarif;
-        }
+        
 
         /// <summary>
         /// ReductionTarif applique une réduction au tarif de l'adhésion. On arrondi à la valeur entière la plus proche.
@@ -46,9 +48,5 @@ namespace ArrowFRApp
         }
 
 
-
-
-
-        public int id { get; set; }
     }
 }

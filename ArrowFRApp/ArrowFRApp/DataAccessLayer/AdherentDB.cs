@@ -166,5 +166,65 @@ namespace ArrowFRApp
                 cmd.ExecuteNonQuery();
             }
         }
+
+        //Nombre d'adhérent 
+        public int NbAdherent()
+        {
+            string connectionString = Initialisation.InitialiserConnexion();
+            string query;
+
+            query = "select count(idAdherent) from adherent ";
+            Int32 count = 0;
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                count = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            return count;
+        }
+
+        //Nombre d'adhésion par type 
+
+        public int NbAdhesion()
+        {
+            string connectionString = Initialisation.InitialiserConnexion();
+            string query;
+
+            query = "SELECT libelle, COUNT(libelle) From adherent, typeadhesion WHERE adherent.TypeAdhesion = typeadhesion.idTypeAdhesion GROUP BY libelle ";
+            Int32 count = 0;
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                count = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            return count;
+        }
+
+        public int MontantAdhesion()
+        {
+            string connectionString = Initialisation.InitialiserConnexion();
+            string query;
+
+            query = "SELECT Sum(tarif) From adherent, typeadhesion WHERE adherent.TypeAdhesion = typeadhesion.idTypeAdhesion ";
+            Int32 result = 0;
+            
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                
+                result = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            return result;
+        }
+        
     }
 }
