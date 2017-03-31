@@ -66,8 +66,8 @@ namespace ArrowFRApp
             listViewAdherent.Refresh();
             AdherentDB adhDB = new AdherentDB();
             TypeAdhesionDB typeDB = new TypeAdhesionDB();
-            var item = Convert.ToInt32(listBoxTypeAdhesion.SelectedItem);
-            TypeAdhesion t = typeDB.GetTypeAdhesion(item);
+            var index = listBoxTypeAdhesion.SelectedIndex;
+            TypeAdhesion t = typeDB.GetTypeAdhesion(index);
             Adherent a = new Adherent(textBoxNom.Text, textBoxPrenom.Text, dateTimePicker1.Value, textBoxVille.Text, textBoxCodePostale.Text, t);
             adhDB.Save(a);
             
@@ -129,6 +129,7 @@ namespace ArrowFRApp
                 textBoxVille.Clear();
                 textBoxCodePostale.Clear();
                 listBoxTypeAdhesion.ClearSelected();
+                
                 foreach (int i in listBoxTypeAdhesion.CheckedIndices)
                 {
                     listBoxTypeAdhesion.SetItemCheckState(i, CheckState.Unchecked);
@@ -180,7 +181,7 @@ namespace ArrowFRApp
                 listItem.SubItems.Add(item.GetVille());
                 listItem.SubItems.Add(item.GetCodePostal());
                 listItem.SubItems.Add(item.GetTypeAdherent().Libelle);
-
+                listItem.SubItems.Add(item.GetId().ToString());
                 listViewAdherent.Items.Add(listItem);
             }
         }

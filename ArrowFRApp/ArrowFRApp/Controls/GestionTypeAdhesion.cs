@@ -97,9 +97,7 @@ namespace ArrowFRApp
                 ListViewItem listItem = new ListViewItem(item.Libelle);
 
                 listItem.SubItems.Add(item.Tarif.ToString());
-
-
-
+                listItem.SubItems.Add(item.idTypeAdhesion.ToString());
                 listViewTypeAdhesion.Items.Add(listItem);
             }
         }
