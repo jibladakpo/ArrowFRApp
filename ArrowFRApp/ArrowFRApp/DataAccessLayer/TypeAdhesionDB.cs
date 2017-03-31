@@ -140,9 +140,26 @@ namespace ArrowFRApp
         /// TODO.  Supprimer type adhesion
         /// </summary>
         /// <param name="id"></param>
-        public static void Delete(int id)
+        public  void Delete(int id)
         {
+            string connectionString = Initialisation.InitialiserConnexion();
+            string query;
 
+            query = "delete from typeadhesion where idTypeAdhesion = @id";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@id", id);
+                
+
+                //exécution la commande
+                cmd.ExecuteNonQuery();
+            }
         }
+
+        
     }
 }

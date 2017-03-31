@@ -39,6 +39,7 @@
             this.columnLibelle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnTarif = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
+            this.columnId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // labelTarif
@@ -107,13 +108,16 @@
             // 
             this.listViewTypeAdhesion.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnLibelle,
-            this.columnTarif});
+            this.columnTarif,
+            this.columnId});
+            this.listViewTypeAdhesion.FullRowSelect = true;
             this.listViewTypeAdhesion.Location = new System.Drawing.Point(293, 97);
             this.listViewTypeAdhesion.Name = "listViewTypeAdhesion";
             this.listViewTypeAdhesion.Size = new System.Drawing.Size(369, 408);
             this.listViewTypeAdhesion.TabIndex = 30;
             this.listViewTypeAdhesion.UseCompatibleStateImageBehavior = false;
             this.listViewTypeAdhesion.View = System.Windows.Forms.View.Details;
+            this.listViewTypeAdhesion.SelectedIndexChanged += new System.EventHandler(this.listViewTypeAdhesion_SelectedIndexChanged_1);
             // 
             // columnLibelle
             // 
@@ -132,6 +136,11 @@
             this.label1.Size = new System.Drawing.Size(391, 38);
             this.label1.TabIndex = 31;
             this.label1.Text = "Gestion Types Adhésions";
+            // 
+            // columnId
+            // 
+            this.columnId.Text = "Id";
+            this.columnId.Width = 0;
             // 
             // GestionTypeAdhesion
             // 
@@ -168,5 +177,6 @@
         private System.Windows.Forms.ColumnHeader columnLibelle;
         private System.Windows.Forms.ColumnHeader columnTarif;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColumnHeader columnId;
     }
 }
