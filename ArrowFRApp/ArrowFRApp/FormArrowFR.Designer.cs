@@ -73,7 +73,7 @@
             this.panelAccueil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAccueil.Location = new System.Drawing.Point(0, 0);
             this.panelAccueil.Name = "panelAccueil";
-            this.panelAccueil.Size = new System.Drawing.Size(1474, 689);
+            this.panelAccueil.Size = new System.Drawing.Size(1580, 689);
             this.panelAccueil.TabIndex = 3;
             this.panelAccueil.Visible = false;
             // 
@@ -82,7 +82,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(1474, 689);
+            this.ClientSize = new System.Drawing.Size(1580, 689);
             this.Controls.Add(this.panelAccueil);
             this.Controls.Add(this.labelTitre);
             this.Controls.Add(this.pictureArrowFR);

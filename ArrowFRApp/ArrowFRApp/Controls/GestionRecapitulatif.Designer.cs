@@ -31,7 +31,6 @@
             this.labelRecapitulatif = new System.Windows.Forms.Label();
             this.labelNombreAdherent = new System.Windows.Forms.Label();
             this.labelMtTotalAdhesion = new System.Windows.Forms.Label();
-            this.labelMontantAdhesionParType = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelRecapitulatif
@@ -40,7 +39,7 @@
             this.labelRecapitulatif.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRecapitulatif.Location = new System.Drawing.Point(28, 29);
             this.labelRecapitulatif.Name = "labelRecapitulatif";
-            this.labelRecapitulatif.Size = new System.Drawing.Size(205, 39);
+            this.labelRecapitulatif.Size = new System.Drawing.Size(196, 38);
             this.labelRecapitulatif.TabIndex = 0;
             this.labelRecapitulatif.Text = "Récapitulatif";
             // 
@@ -64,22 +63,11 @@
             this.labelMtTotalAdhesion.TabIndex = 2;
             this.labelMtTotalAdhesion.Text = "Montant total des adhésions";
             // 
-            // labelMontantAdhesionParType
-            // 
-            this.labelMontantAdhesionParType.AutoSize = true;
-            this.labelMontantAdhesionParType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMontantAdhesionParType.Location = new System.Drawing.Point(35, 217);
-            this.labelMontantAdhesionParType.Name = "labelMontantAdhesionParType";
-            this.labelMontantAdhesionParType.Size = new System.Drawing.Size(297, 29);
-            this.labelMontantAdhesionParType.TabIndex = 3;
-            this.labelMontantAdhesionParType.Text = "Montant Adhésion par type";
-            // 
             // GestionRecapitulatif
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.labelMontantAdhesionParType);
             this.Controls.Add(this.labelMtTotalAdhesion);
             this.Controls.Add(this.labelNombreAdherent);
             this.Controls.Add(this.labelRecapitulatif);
@@ -96,6 +84,5 @@
         private System.Windows.Forms.Label labelRecapitulatif;
         private System.Windows.Forms.Label labelNombreAdherent;
         private System.Windows.Forms.Label labelMtTotalAdhesion;
-        private System.Windows.Forms.Label labelMontantAdhesionParType;
     }
 }

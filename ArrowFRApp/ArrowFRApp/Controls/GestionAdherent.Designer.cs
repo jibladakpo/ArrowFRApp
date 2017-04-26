@@ -47,11 +47,11 @@
             this.columnVille = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnCodePostal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnTypeAdhesion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.buttonClear = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxTypeAdhesion = new System.Windows.Forms.CheckedListBox();
-            this.columnId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // buttonCreerAdherent
@@ -171,7 +171,7 @@
             this.listViewAdherent.GridLines = true;
             this.listViewAdherent.Location = new System.Drawing.Point(293, 77);
             this.listViewAdherent.Name = "listViewAdherent";
-            this.listViewAdherent.Size = new System.Drawing.Size(724, 418);
+            this.listViewAdherent.Size = new System.Drawing.Size(967, 418);
             this.listViewAdherent.TabIndex = 19;
             this.listViewAdherent.UseCompatibleStateImageBehavior = false;
             this.listViewAdherent.View = System.Windows.Forms.View.Details;
@@ -211,6 +211,11 @@
             this.columnTypeAdhesion.Text = "TypeAdhesion";
             this.columnTypeAdhesion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnTypeAdhesion.Width = 120;
+            // 
+            // columnId
+            // 
+            this.columnId.Text = "Id";
+            this.columnId.Width = 0;
             // 
             // dateTimePicker1
             // 
@@ -252,11 +257,6 @@
             this.listBoxTypeAdhesion.TabIndex = 1;
             this.listBoxTypeAdhesion.UseTabStops = false;
             // 
-            // columnId
-            // 
-            this.columnId.Text = "Id";
-            this.columnId.Width = 0;
-            // 
             // GestionAdherent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -280,7 +280,7 @@
             this.Controls.Add(this.buttonModifierAdherent);
             this.Controls.Add(this.buttonCreerAdherent);
             this.Name = "GestionAdherent";
-            this.Size = new System.Drawing.Size(1058, 610);
+            this.Size = new System.Drawing.Size(1298, 610);
             this.Load += new System.EventHandler(this.Adherent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
