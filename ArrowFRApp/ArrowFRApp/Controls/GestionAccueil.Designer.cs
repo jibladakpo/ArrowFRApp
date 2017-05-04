@@ -64,7 +64,7 @@
             this.buttonGestionAdherent.Name = "buttonGestionAdherent";
             this.buttonGestionAdherent.Size = new System.Drawing.Size(188, 79);
             this.buttonGestionAdherent.TabIndex = 2;
-            this.buttonGestionAdherent.Text = "Gestion Adherent";
+            this.buttonGestionAdherent.Text = "Gestion Adhérent";
             this.buttonGestionAdherent.UseVisualStyleBackColor = true;
             this.buttonGestionAdherent.Click += new System.EventHandler(this.buttonGestionAdherent_Click);
             // 
