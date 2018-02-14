@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Classes\Adherent.cs" />
     <Compile Include="Classes\TypeAdhesion.cs" />
+    <Compile Include="Classes\Utilisateur.cs" />
     <Compile Include="Controls\GestionAccueil.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,6 +82,7 @@
     <Compile Include="DataAccessLayer\AdherentDB.cs" />
     <Compile Include="DataAccessLayer\Initialisation.cs" />
     <Compile Include="DataAccessLayer\TypeAdhesionDB.cs" />
+    <Compile Include="DataAccessLayer\UtilisateurDB.cs" />
     <Compile Include="FormArrowFR.cs">
       <SubType>Form</SubType>
     </Compile>
