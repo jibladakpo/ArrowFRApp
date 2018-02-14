@@ -11,14 +11,11 @@ namespace ArrowFRApp
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             panelAccueil.Visible = true;
+
              if (!panelAccueil.Controls.Contains(GestionAccueil.Instance))
             {
                 panelAccueil.Controls.Add(GestionAccueil.Instance);
@@ -35,16 +32,14 @@ namespace ArrowFRApp
 
         }
 
-        private void panelAccueil_Paint(object sender, PaintEventArgs e)
+       /* private void panelAccueil_Paint(object sender, PaintEventArgs e)
         {
 
-        }
+        } */
 
-        private void panelGestion_Paint(object sender, PaintEventArgs e)
+       /* private void panelGestion_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-       
+        } */
     }
 }
