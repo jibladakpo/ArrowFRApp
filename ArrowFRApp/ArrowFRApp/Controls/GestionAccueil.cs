@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArrowFRApp.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace ArrowFRApp.Controls
 {
@@ -24,16 +26,14 @@ namespace ArrowFRApp.Controls
            
             }
         }
+        public Accueil Accueil;
+
         public GestionAccueil()
         {
             InitializeComponent();
         }
 
-        private void GestionAccueil_Load(object sender, EventArgs e)
-        {
-        }
-            
-      
+        
        
         //affichage gestion Adherent
         private void buttonGestionAdherent_Click(object sender, EventArgs e)
@@ -43,9 +43,11 @@ namespace ArrowFRApp.Controls
                 panelGestion.Controls.Add(GestionAdherent.Instance);
                 GestionAdherent.Instance.Dock = DockStyle.Fill;
                 GestionAdherent.Instance.BringToFront();
+                buttonDeconnexion.BringToFront();
             }
             else
                 GestionAdherent.Instance.BringToFront();
+            buttonDeconnexion.BringToFront();
         }
         //affichage gestion typeAdhesion
         private void buttonGestionTypeAdhesion_Click_1(object sender, EventArgs e)
@@ -55,9 +57,11 @@ namespace ArrowFRApp.Controls
                 panelGestion.Controls.Add(GestionTypeAdhesion.Instance);
                 GestionTypeAdhesion.Instance.Dock = DockStyle.Fill;
                 GestionTypeAdhesion.Instance.BringToFront();
+                buttonDeconnexion.BringToFront();
             }
             else
                 GestionTypeAdhesion.Instance.BringToFront();
+            buttonDeconnexion.BringToFront();
         }
 
         private void buttonRecapitulatif_Click(object sender, EventArgs e)
@@ -67,9 +71,41 @@ namespace ArrowFRApp.Controls
                 panelGestion.Controls.Add(GestionRecapitulatif.Instance);
                 GestionRecapitulatif.Instance.Dock = DockStyle.Fill;
                 GestionRecapitulatif.Instance.BringToFront();
+                buttonDeconnexion.BringToFront();
             }
             else
                 GestionRecapitulatif.Instance.BringToFront();
+            buttonDeconnexion.BringToFront();
+        }
+
+        
+        private void buttonDeconnexion_Click(object sender, EventArgs e)
+        {
+            string message = "Voulez-vous vous déconnecté ?";
+            string titre = "Déconnexion";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, titre, buttons);
+
+            if (result == DialogResult.Yes)
+
+            {
+                Accueil.panelA.Visible = false;
+            }
+            else
+            {
+
+
+            }
+
+
+
+           
+            
+
+            
+            
+            
+            
         }
     }
         

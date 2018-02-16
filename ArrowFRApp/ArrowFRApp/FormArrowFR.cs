@@ -16,14 +16,31 @@ namespace ArrowFRApp
 {
     public partial class Accueil : Form
     {
+
+        public static Accueil _instance;
+
+        public static Accueil Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new Accueil();
+                return _instance;
+
+            }
+        }
         public Accueil()
         {
             InitializeComponent();
+            
         }
 
+        public static Panel panelA;
 
         private void button1_Click(object sender, EventArgs e)
         {
+            panelA = panelAccueil;
+            GestionAccueil gestA = new GestionAccueil();
             panelAccueil.Visible = true;
             string connectionString = Initialisation.InitialiserConnexion();
             MySqlConnection sqlcon = new MySqlConnection(connectionString);
@@ -35,25 +52,26 @@ namespace ArrowFRApp
 
             if (dt1.Rows.Count == 1)
             {
+                
                 panelAccueil.Controls.Add(GestionAccueil.Instance);
                 GestionAccueil.Instance.Dock = DockStyle.Fill;
                 GestionAccueil.Instance.BringToFront();
+                
+                textLogin.Clear();
+                textMdp.Clear();
             }
             else
+            {
                 panelAccueil.Visible = false;
-            MessageBox.Show("Vérifier votre login et mot de passe");
-            
+                MessageBox.Show("Vérifier votre login et mot de passe");
+                textLogin.Clear();
+                textMdp.Clear();
+
+                
+            }
 
         }
 
-        /* private void panelAccueil_Paint(object sender, PaintEventArgs e)
-         {
-
-         } */
-
-        /* private void panelGestion_Paint(object sender, PaintEventArgs e)
-         {
-
-         } */
+      
     }
 }

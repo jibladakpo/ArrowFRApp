@@ -81,7 +81,7 @@
             this.panelAccueil.Location = new System.Drawing.Point(0, 0);
             this.panelAccueil.Name = "panelAccueil";
             this.panelAccueil.Size = new System.Drawing.Size(1580, 689);
-            this.panelAccueil.TabIndex = 5;
+            this.panelAccueil.TabIndex = 0;
             this.panelAccueil.Visible = false;
             // 
             // labelLogin

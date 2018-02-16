@@ -31,12 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionAccueil));
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelGestion = new System.Windows.Forms.Panel();
+            this.buttonDeconnexion = new System.Windows.Forms.Button();
             this.buttonGestionAdherent = new System.Windows.Forms.Button();
             this.buttonGestionTypeAdhesion = new System.Windows.Forms.Button();
             this.buttonRecapitulatif = new System.Windows.Forms.Button();
             this.pictureBoxArrowFr = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panelGestion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowFr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,18 +47,33 @@
             this.splitter1.BackColor = System.Drawing.Color.RoyalBlue;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(258, 559);
+            this.splitter1.Size = new System.Drawing.Size(258, 650);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
             // panelGestion
             // 
             this.panelGestion.BackColor = System.Drawing.Color.White;
+            this.panelGestion.Controls.Add(this.buttonDeconnexion);
             this.panelGestion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGestion.Location = new System.Drawing.Point(258, 0);
             this.panelGestion.Name = "panelGestion";
-            this.panelGestion.Size = new System.Drawing.Size(663, 559);
+            this.panelGestion.Size = new System.Drawing.Size(663, 650);
             this.panelGestion.TabIndex = 1;
+            // 
+            // buttonDeconnexion
+            // 
+            this.buttonDeconnexion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDeconnexion.BackColor = System.Drawing.Color.Red;
+            this.buttonDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeconnexion.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonDeconnexion.Location = new System.Drawing.Point(522, 11);
+            this.buttonDeconnexion.Name = "buttonDeconnexion";
+            this.buttonDeconnexion.Size = new System.Drawing.Size(121, 63);
+            this.buttonDeconnexion.TabIndex = 8;
+            this.buttonDeconnexion.Text = "Déconnexion";
+            this.buttonDeconnexion.UseVisualStyleBackColor = false;
+            this.buttonDeconnexion.Click += new System.EventHandler(this.buttonDeconnexion_Click);
             // 
             // buttonGestionAdherent
             // 
@@ -133,8 +150,8 @@
             this.Controls.Add(this.panelGestion);
             this.Controls.Add(this.splitter1);
             this.Name = "GestionAccueil";
-            this.Size = new System.Drawing.Size(921, 559);
-            this.Load += new System.EventHandler(this.GestionAccueil_Load);
+            this.Size = new System.Drawing.Size(921, 650);
+            this.panelGestion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowFr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -151,6 +168,6 @@
         private System.Windows.Forms.PictureBox pictureBoxArrowFr;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-
+        private System.Windows.Forms.Button buttonDeconnexion;
     }
 }
