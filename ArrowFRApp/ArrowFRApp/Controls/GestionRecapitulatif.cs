@@ -35,8 +35,10 @@ namespace ArrowFRApp.Controls
             AdherentDB adhDB = new AdherentDB();
             labelRecapitulatif.Text = "Récapitulatif: " + DateTime.Now.ToShortDateString();
             labelNombreAdherent.Text = "Nombre total d'adhérent: " + adhDB.NbAdherent();
-            labelMtTotalAdhesion.Text = "Montant total des adhésions: " + Convert.ToInt32(adhDB.MontantAdhesion());
+            labelMtTotalAdhesion.Text = "Montant total des adhésions: " + Convert.ToInt32(adhDB.MontantAdhesion()) + "€";
             
         }
+
+       
     }
 }

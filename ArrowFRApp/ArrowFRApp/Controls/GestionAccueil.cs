@@ -81,7 +81,7 @@ namespace ArrowFRApp.Controls
         
         private void buttonDeconnexion_Click(object sender, EventArgs e)
         {
-            string message = "Voulez-vous vous déconnecté ?";
+            string message = "Voulez-vous vous déconnecter ?";
             string titre = "Déconnexion";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, titre, buttons);
