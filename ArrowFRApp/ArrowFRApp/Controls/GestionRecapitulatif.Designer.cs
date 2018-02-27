@@ -72,10 +72,10 @@
             // labelAdhesionType
             // 
             this.labelAdhesionType.AutoSize = true;
-            this.labelAdhesionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAdhesionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAdhesionType.Location = new System.Drawing.Point(32, 215);
             this.labelAdhesionType.Name = "labelAdhesionType";
-            this.labelAdhesionType.Size = new System.Drawing.Size(170, 25);
+            this.labelAdhesionType.Size = new System.Drawing.Size(206, 29);
             this.labelAdhesionType.TabIndex = 4;
             this.labelAdhesionType.Text = "Adhésion par type";
             // 
@@ -97,8 +97,7 @@
             // 
             // columnType
             // 
-            this.columnType.DisplayIndex = 0;
-            this.columnType.Text = "Catégorie";
+            this.columnType.Text = "Type";
             this.columnType.Width = 110;
             // 
             // columnNbAdherent
