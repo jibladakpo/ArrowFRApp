@@ -36,9 +36,22 @@ namespace ArrowFRApp.Controls
             labelRecapitulatif.Text = "Récapitulatif: " + DateTime.Now.ToShortDateString();
             labelNombreAdherent.Text = "Nombre total d'adhérent: " + adhDB.NbAdherent();
             labelMtTotalAdhesion.Text = "Montant total des adhésions: " + Convert.ToInt32(adhDB.MontantAdhesion()) + "€";
+            TypeAdhesionDB adhesionDB = new TypeAdhesionDB();
+            List<ArrowFRApp.TypeAdhesion> lesTypesAdhesions = adhesionDB.GetAllTypeAdhesion();
+            
+            foreach (var item in lesTypesAdhesions)
+            {
+
+                ListViewItem listItem = new ListViewItem(item.Libelle);
+                listItem.SubItems.Add(Convert.ToString(adhesionDB.NbAdhesionParType(item.Libelle)));
+                listItem.SubItems.Add(item.Tarif.ToString());
+                listItem.SubItems.Add(Convert.ToString(adhesionDB.MontantAdhesionParType(item.Libelle)));
+                listViewAdhesionType.Items.Add(listItem);
+
+            }
             
         }
 
-       
+        
     }
 }

@@ -35,18 +35,19 @@ namespace ArrowFRApp
             Tarif = leTarif;
         }
 
-        
+
 
         /// <summary>
         /// ReductionTarif applique une réduction au tarif de l'adhésion. On arrondi à la valeur entière la plus proche.
         /// </summary>
         /// <param name="reduction">la réduction en pourcent</param>
+        /*
         public void ReductionTarif(int reduction)
         {
             double reduc = 1 - (reduction / 100.0);
             Tarif = Convert.ToInt32(Math.Round(Tarif * reduc));
         }
-
+        */
 
     }
 }

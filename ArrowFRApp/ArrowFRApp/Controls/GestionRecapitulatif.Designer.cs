@@ -31,6 +31,12 @@
             this.labelRecapitulatif = new System.Windows.Forms.Label();
             this.labelNombreAdherent = new System.Windows.Forms.Label();
             this.labelMtTotalAdhesion = new System.Windows.Forms.Label();
+            this.labelAdhesionType = new System.Windows.Forms.Label();
+            this.listViewAdhesionType = new System.Windows.Forms.ListView();
+            this.columnType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnNbAdherent = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnMontant = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnTarif = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // labelRecapitulatif
@@ -47,7 +53,7 @@
             // 
             this.labelNombreAdherent.AutoSize = true;
             this.labelNombreAdherent.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombreAdherent.Location = new System.Drawing.Point(30, 117);
+            this.labelNombreAdherent.Location = new System.Drawing.Point(30, 107);
             this.labelNombreAdherent.Name = "labelNombreAdherent";
             this.labelNombreAdherent.Size = new System.Drawing.Size(232, 29);
             this.labelNombreAdherent.TabIndex = 1;
@@ -57,17 +63,71 @@
             // 
             this.labelMtTotalAdhesion.AutoSize = true;
             this.labelMtTotalAdhesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMtTotalAdhesion.Location = new System.Drawing.Point(30, 168);
+            this.labelMtTotalAdhesion.Location = new System.Drawing.Point(30, 159);
             this.labelMtTotalAdhesion.Name = "labelMtTotalAdhesion";
             this.labelMtTotalAdhesion.Size = new System.Drawing.Size(312, 29);
             this.labelMtTotalAdhesion.TabIndex = 2;
             this.labelMtTotalAdhesion.Text = "Montant total des adhésions";
+            // 
+            // labelAdhesionType
+            // 
+            this.labelAdhesionType.AutoSize = true;
+            this.labelAdhesionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAdhesionType.Location = new System.Drawing.Point(32, 215);
+            this.labelAdhesionType.Name = "labelAdhesionType";
+            this.labelAdhesionType.Size = new System.Drawing.Size(170, 25);
+            this.labelAdhesionType.TabIndex = 4;
+            this.labelAdhesionType.Text = "Adhésion par type";
+            // 
+            // listViewAdhesionType
+            // 
+            this.listViewAdhesionType.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnType,
+            this.columnNbAdherent,
+            this.columnTarif,
+            this.columnMontant});
+            this.listViewAdhesionType.FullRowSelect = true;
+            this.listViewAdhesionType.GridLines = true;
+            this.listViewAdhesionType.Location = new System.Drawing.Point(26, 271);
+            this.listViewAdhesionType.Name = "listViewAdhesionType";
+            this.listViewAdhesionType.Size = new System.Drawing.Size(749, 179);
+            this.listViewAdhesionType.TabIndex = 5;
+            this.listViewAdhesionType.UseCompatibleStateImageBehavior = false;
+            this.listViewAdhesionType.View = System.Windows.Forms.View.Details;
+            // 
+            // columnType
+            // 
+            this.columnType.DisplayIndex = 0;
+            this.columnType.Text = "Catégorie";
+            this.columnType.Width = 110;
+            // 
+            // columnNbAdherent
+            // 
+            this.columnNbAdherent.DisplayIndex = 1;
+            this.columnNbAdherent.Text = "Nombre d\'Adhérent";
+            this.columnNbAdherent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnNbAdherent.Width = 110;
+            // 
+            // columnMontant
+            // 
+            this.columnMontant.DisplayIndex = 2;
+            this.columnMontant.Text = "Montant Total";
+            this.columnMontant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnMontant.Width = 110;
+            // 
+            // columnTarif
+            // 
+            this.columnTarif.Text = "Tarif";
+            this.columnTarif.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnTarif.Width = 110;
             // 
             // GestionRecapitulatif
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.listViewAdhesionType);
+            this.Controls.Add(this.labelAdhesionType);
             this.Controls.Add(this.labelMtTotalAdhesion);
             this.Controls.Add(this.labelNombreAdherent);
             this.Controls.Add(this.labelRecapitulatif);
@@ -84,5 +144,11 @@
         private System.Windows.Forms.Label labelRecapitulatif;
         private System.Windows.Forms.Label labelNombreAdherent;
         private System.Windows.Forms.Label labelMtTotalAdhesion;
+        private System.Windows.Forms.Label labelAdhesionType;
+        private System.Windows.Forms.ListView listViewAdhesionType;
+        private System.Windows.Forms.ColumnHeader columnType;
+        private System.Windows.Forms.ColumnHeader columnNbAdherent;
+        private System.Windows.Forms.ColumnHeader columnMontant;
+        private System.Windows.Forms.ColumnHeader columnTarif;
     }
 }

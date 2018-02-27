@@ -50,9 +50,9 @@ namespace ArrowFRApp
             return leTypeAdhesion;
         }
 
-        
-        
-        
+
+
+
         //public static List<TypeAdhesion> GetAlltypeAdhesion()
         /// <summary>
         /// La méthode GetAllAdherent retourne les informations sur tous les adhérents de la base.  
@@ -128,7 +128,7 @@ namespace ArrowFRApp
                 cmd.Parameters.AddWithValue("@idtype", unTypeAdhesion.idTypeAdhesion);
                 cmd.Parameters.AddWithValue("@libelle", unTypeAdhesion.Libelle);
                 cmd.Parameters.AddWithValue("@tarif", unTypeAdhesion.Tarif);
-                
+
 
                 //exécution la commande
                 cmd.ExecuteNonQuery();
@@ -140,7 +140,7 @@ namespace ArrowFRApp
         /// TODO.  Supprimer type adhesion
         /// </summary>
         /// <param name="id"></param>
-        public  void Delete(int id)
+        public void Delete(int id)
         {
             string connectionString = Initialisation.InitialiserConnexion();
             string query;
@@ -153,13 +153,79 @@ namespace ArrowFRApp
                 //Create Command
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@id", id);
-                
+
 
                 //exécution la commande
                 cmd.ExecuteNonQuery();
             }
         }
+        //Nombre d'adhésion par type 
 
-        
+        public int NbAdhesionParType(string libelle)
+        {
+            string connectionString = Initialisation.InitialiserConnexion();
+            string query;
+
+            query = "SELECT COUNT(libelle)As NbAdhesionParType From adherent, typeadhesion WHERE adherent.TypeAdhesion = typeadhesion.idTypeAdhesion AND libelle = @libelle GROUP BY libelle  ";
+            Int32 count = 0;
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@libelle", libelle);
+
+                //Crée un data reader et exécute la commande
+                using (MySqlDataReader dataReader = cmd.ExecuteReader())
+                while (dataReader.Read())
+                {
+
+                   // int idType = Convert.ToInt32(dataReader["idTypeAdhesion"]);
+                        count = Convert.ToInt32(dataReader["NbAdhesionParType"]);
+
+
+                }
+                return count;
+            }
+
+          
+
+        }
+
+        //Montant des adhésion par type
+        //à coder!!!
+
+        public int MontantAdhesionParType(string libelle)
+        {
+            string connectionString = Initialisation.InitialiserConnexion();
+            string query;
+
+            query = "SELECT tarif * count(idAdherent) As MtAdhesionParType From adherent, typeadhesion WHERE adherent.TypeAdhesion = typeadhesion.idTypeAdhesion AND libelle = @libelle GROUP BY libelle";
+            Int32 result = 0;
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@libelle", libelle);
+
+                //Crée un data reader et exécute la commande
+                using (MySqlDataReader dataReader = cmd.ExecuteReader())
+                    while (dataReader.Read())
+                    {
+
+                        // int idType = Convert.ToInt32(dataReader["idTypeAdhesion"]);
+                        result = Convert.ToInt32(dataReader["MtAdhesionParType"]);
+
+
+                    }
+
+
+                return result;
+            }
+        }
     }
 }
