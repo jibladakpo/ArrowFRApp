@@ -42,6 +42,28 @@ namespace ArrowFRApp
             panelA = panelAccueil;
             GestionAccueil gestA = new GestionAccueil();
             panelAccueil.Visible = true;
+            UtilisateurDB utilDB = new UtilisateurDB();
+            utilDB.login = textLogin.Text;
+            utilDB.mdp = textMdp.Text;
+
+            if (utilDB.CheckAuth())
+            {
+                panelAccueil.Controls.Add(GestionAccueil.Instance);
+                GestionAccueil.Instance.Dock = DockStyle.Fill;
+                GestionAccueil.Instance.BringToFront();
+
+                textLogin.Clear();
+                textMdp.Clear();
+            }
+
+            else
+            {
+                panelAccueil.Visible = false;
+                MessageBox.Show("Vérifier votre login et mot de passe");
+                textLogin.Clear();
+                textMdp.Clear();
+            }
+            /*
             string connectionString = Initialisation.InitialiserConnexion();
             MySqlConnection sqlcon = new MySqlConnection(connectionString);
             string query = "Select * From Utilisateur Where login = '" + textLogin.Text.Trim() + "' and mdp = '" + textMdp.Text.Trim() + "'"; 
@@ -69,7 +91,7 @@ namespace ArrowFRApp
 
                 
             }
-
+            */
         }
 
       

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArrowFRApp.Classes
 {
-    class Utilisateur
+    public class Utilisateur
     {
         public int idUtilisateur { get; set; }
         public string login { get; set; }

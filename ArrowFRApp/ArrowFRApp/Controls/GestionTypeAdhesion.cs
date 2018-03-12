@@ -38,7 +38,6 @@ namespace ArrowFRApp
             List<ArrowFRApp.TypeAdhesion> lesTypesAdhesions = adhDB.GetAllTypeAdhesion();
             foreach (var item in lesTypesAdhesions)
             {
-
                 ListViewItem listItem = new ListViewItem(item.Libelle);
                 listItem.SubItems.Add(item.Tarif.ToString());
                 listItem.SubItems.Add(item.idTypeAdhesion.ToString());

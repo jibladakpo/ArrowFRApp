@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ArrowFRApp
 {
-    class TypeAdhesionDB
+    public class TypeAdhesionDB
     {
         /// <summary>
         /// La méthode GetTypeAdhesion retourne les informations sur un type d'adhésion. 

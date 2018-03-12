@@ -2,14 +2,18 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ArrowFRApp.DataAccessLayer
 {
-    class UtilisateurDB
+    public class UtilisateurDB
     {
+        public string mdp { get; set; }
+        public string login { get; set; }
+
         public  Utilisateur GetUtilisateur(int id)
         {
             string connectionString = Initialisation.InitialiserConnexion();
@@ -83,5 +87,31 @@ namespace ArrowFRApp.DataAccessLayer
 
             return listeDeTousLesUtilisateurs;
         }
+
+        public bool CheckAuth()
+        {
+            string connectionString = Initialisation.InitialiserConnexion();
+            MySqlConnection sqlcon = new MySqlConnection(connectionString);
+
+            string query = "Select * From Utilisateur Where login = '"+ login +"' and mdp = '"+ mdp +"'";
+            MySqlDataAdapter sda = new MySqlDataAdapter(query, sqlcon);
+            DataTable dt1 = new DataTable();
+            sda.Fill(dt1);
+            bool Auth = false;
+            
+
+                if (dt1.Rows.Count == 1)
+                {
+                    Auth = true;
+                }
+                else
+                {
+                    Auth = false;
+
+                }
+
+                return Auth ;
+            }
+        }
     }
-}
+

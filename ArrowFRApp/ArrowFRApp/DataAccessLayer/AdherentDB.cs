@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ArrowFRApp
 {
-    class AdherentDB
+    public class AdherentDB
     {
         /// <summary>
         /// La méthode GetAdherent retourne les informations sur un adherent. 
